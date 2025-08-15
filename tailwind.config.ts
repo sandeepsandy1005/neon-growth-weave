@@ -62,24 +62,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				neon: {
-					cyan: 'hsl(var(--neon-cyan))',
-					indigo: 'hsl(var(--neon-indigo))',
-					fuchsia: 'hsl(var(--neon-fuchsia))',
-					emerald: 'hsl(var(--neon-emerald))'
+				professional: {
+					blue: 'hsl(var(--accent-blue))',
+					purple: 'hsl(var(--accent-purple))', 
+					emerald: 'hsl(var(--accent-emerald))',
+					orange: 'hsl(var(--accent-orange))'
 				}
 			},
 			backgroundImage: {
-				'gradient-neon-primary': 'var(--gradient-neon-primary)',
-				'gradient-neon-subtle': 'var(--gradient-neon-subtle)',
-				'gradient-aurora-1': 'var(--gradient-aurora-1)',
-				'gradient-aurora-2': 'var(--gradient-aurora-2)',
-				'gradient-aurora-3': 'var(--gradient-aurora-3)'
+				'gradient-professional-primary': 'var(--gradient-professional-primary)',
+				'gradient-professional-subtle': 'var(--gradient-professional-subtle)'
 			},
 			boxShadow: {
-				'neon-sm': 'var(--shadow-neon-sm)',
-				'neon-md': 'var(--shadow-neon-md)',
-				'neon-lg': 'var(--shadow-neon-lg)'
+				'professional-sm': 'var(--shadow-professional-sm)',
+				'professional-md': 'var(--shadow-professional-md)', 
+				'professional-lg': 'var(--shadow-professional-lg)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

@@ -2,61 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Grow with AI - Neon Gradient Design System
+/* AutomateZAI - Professional AI Automation Design System
 All colors MUST be HSL for consistency.
 */
 
 @layer base {
   :root {
-    /* Dark theme base colors */
-    --background: 215 50% 6%;  /* #0a0f1f */
+    /* Professional dark theme */
+    --background: 220 30% 5%;     /* Deep professional blue-gray */
     --foreground: 210 40% 98%;
     
-    /* Neon palette */
-    --neon-cyan: 186 100% 60%;    /* #22d3ee */
-    --neon-indigo: 239 84% 67%;   /* #6366f1 */
-    --neon-fuchsia: 292 76% 58%;  /* #d946ef */
-    --neon-emerald: 156 72% 57%;  /* #10b981 */
+    /* Professional palette - less neon, more corporate */
+    --accent-blue: 217 91% 60%;   /* Professional blue */
+    --accent-purple: 259 94% 51%; /* Deep purple */
+    --accent-emerald: 142 76% 36%; /* Professional green */
+    --accent-orange: 25 95% 53%;  /* Warm orange accent */
     
-    /* Component colors using neon palette */
-    --primary: 239 84% 67%;       /* neon-indigo */
+    /* Component colors using professional palette */
+    --primary: 217 91% 60%;        /* Professional blue */
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 215 50% 15%;     /* darker bg for cards */
+    --secondary: 220 30% 12%;      /* Professional dark card bg */
     --secondary-foreground: 210 40% 98%;
     
-    --card: 215 50% 8%;           /* slightly lighter than bg */
+    --card: 220 30% 8%;            /* Professional card background */
     --card-foreground: 210 40% 98%;
     
-    --popover: 215 50% 8%;
+    --popover: 220 30% 8%;
     --popover-foreground: 210 40% 98%;
     
-    --muted: 215 50% 15%;
+    --muted: 220 30% 15%;
     --muted-foreground: 215 20% 65%;
     
-    --accent: 186 100% 60%;       /* neon-cyan */
-    --accent-foreground: 215 50% 6%;
+    --accent: 217 91% 60%;         /* Professional blue accent */
+    --accent-foreground: 220 30% 5%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 215 50% 15%;
-    --input: 215 50% 10%;
-    --ring: 239 84% 67%;
+    --border: 220 30% 15%;
+    --input: 220 30% 10%;
+    --ring: 217 91% 60%;
     
     --radius: 1rem;
     
-    /* Gradients */
-    --gradient-neon-primary: linear-gradient(135deg, hsl(186 100% 60%), hsl(239 84% 67%), hsl(292 76% 58%));
-    --gradient-neon-subtle: linear-gradient(135deg, hsl(186 100% 60% / 0.1), hsl(239 84% 67% / 0.1));
-    --gradient-aurora-1: radial-gradient(40% 40% at 45% 45%, hsl(45 100% 70% / 0.45), transparent 60%);
-    --gradient-aurora-2: radial-gradient(45% 45% at 60% 50%, hsl(156 100% 75% / 0.35), transparent 60%);
-    --gradient-aurora-3: radial-gradient(55% 55% at 58% 60%, hsl(210 100% 50% / 0.30), transparent 70%);
+    /* Professional gradients */
+    --gradient-professional-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(259 94% 51%), hsl(142 76% 36%));
+    --gradient-professional-subtle: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(259 94% 51% / 0.1));
     
-    /* Shadows with glow */
-    --shadow-neon-sm: 0 0 20px hsl(239 84% 67% / 0.25);
-    --shadow-neon-md: 0 0 40px hsl(239 84% 67% / 0.35);
-    --shadow-neon-lg: 0 0 60px hsl(239 84% 67% / 0.45);
+    /* Professional shadows */
+    --shadow-professional-sm: 0 0 20px hsl(217 91% 60% / 0.15);
+    --shadow-professional-md: 0 0 40px hsl(217 91% 60% / 0.25);
+    --shadow-professional-lg: 0 0 60px hsl(217 91% 60% / 0.35);
     
     /* Animation timings */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
