@@ -63,10 +63,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				professional: {
-					blue: 'hsl(var(--accent-blue))',
-					purple: 'hsl(var(--accent-purple))', 
-					emerald: 'hsl(var(--accent-emerald))',
-					orange: 'hsl(var(--accent-orange))'
+					blue: 'hsl(var(--professional-blue))',
+					purple: 'hsl(var(--professional-purple))', 
+					emerald: 'hsl(var(--professional-emerald))',
+					orange: 'hsl(var(--professional-orange))'
 				}
 			},
 			backgroundImage: {

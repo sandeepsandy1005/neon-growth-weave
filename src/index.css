@@ -12,7 +12,7 @@ All colors MUST be HSL for consistency.
     --background: 220 30% 5%;     /* Deep professional blue-gray */
     --foreground: 210 40% 98%;
     
-    /* Professional palette - less neon, more corporate */
+    /* Professional palette */
     --accent-blue: 217 91% 60%;   /* Professional blue */
     --accent-purple: 259 94% 51%; /* Deep purple */
     --accent-emerald: 142 76% 36%; /* Professional green */
@@ -54,6 +54,12 @@ All colors MUST be HSL for consistency.
     --shadow-professional-sm: 0 0 20px hsl(217 91% 60% / 0.15);
     --shadow-professional-md: 0 0 40px hsl(217 91% 60% / 0.25);
     --shadow-professional-lg: 0 0 60px hsl(217 91% 60% / 0.35);
+    
+    /* Professional color tokens for direct use */
+    --professional-blue: 217 91% 60%;
+    --professional-purple: 259 94% 51%;
+    --professional-emerald: 142 76% 36%;
+    --professional-orange: 25 95% 53%;
     
     /* Animation timings */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
