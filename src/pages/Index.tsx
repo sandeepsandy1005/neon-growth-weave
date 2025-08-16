@@ -150,65 +150,171 @@ function ProfessionalCard({ children, className = "" }) {
 }
 
 function Hero() {
+  const [typedText, setTypedText] = useState("");
+  const phrases = ["Enterprise", "Innovation", "Efficiency", "Growth"];
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  useEffect(() => {
+    const currentPhrase = phrases[phraseIndex];
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    const typeInterval = setInterval(() => {
+      if (!isDeleting && charIndex < currentPhrase.length) {
+        setTypedText(currentPhrase.substring(0, charIndex + 1));
+        charIndex++;
+      } else if (isDeleting && charIndex > 0) {
+        setTypedText(currentPhrase.substring(0, charIndex - 1));
+        charIndex--;
+      } else if (!isDeleting) {
+        setTimeout(() => { isDeleting = true; }, 2000);
+      } else {
+        isDeleting = false;
+        setPhraseIndex((prev) => (prev + 1) % phrases.length);
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearInterval(typeInterval);
+  }, [phraseIndex]);
+
   return (
     <section id="home" className="relative isolate pt-20 text-foreground overflow-hidden bg-background">
-      {/* Professional grid pattern */}
-      <div aria-hidden className="absolute inset-0 opacity-[0.03]">
+      {/* Advanced grid pattern */}
+      <div aria-hidden className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)",
-          backgroundSize: "20px 20px"
+          backgroundImage: "linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)",
+          backgroundSize: "60px 60px"
         }} />
       </div>
 
-      {/* Professional gradient orb */}
-      <div aria-hidden className="pointer-events-none absolute -left-40 -top-20 h-96 w-96 blur-3xl opacity-30">
-        <div className="h-full w-full rounded-full bg-gradient-professional-primary" />
+      {/* Multiple animated gradient orbs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-professional-blue/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-professional-purple/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-professional-emerald/3 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
       <Container className="relative z-10 py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 text-sm text-foreground/70 mb-8">
-            <CheckCircle className="h-4 w-4 text-professional-emerald" />
-            Trusted by 500+ Enterprise Clients
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 text-sm text-foreground/70 mb-8 hover:border-professional-blue/30 transition-colors">
+              <div className="w-2 h-2 bg-professional-emerald rounded-full animate-pulse"></div>
+              Trusted by Fortune 500 Companies
+            </div>
+            
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+              <span className="block">Premium AI</span>
+              <span className="block">Automation for</span>
+              <span className="block bg-gradient-professional-primary bg-clip-text text-transparent min-h-[1.2em]">
+                {typedText}<span className="animate-pulse text-professional-blue">|</span>
+              </span>
+            </h1>
+            
+            <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mb-10 leading-relaxed">
+              Transform your enterprise with cutting-edge AI automation. Optimize operations, reduce costs by up to 60%, and drive exponential growth with our proven solutions.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
+              <Button className="w-full sm:w-auto group">
+                Schedule Strategy Session
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button variant="secondary" href="#case-studies" className="w-full sm:w-auto">
+                View Success Stories
+              </Button>
+            </div>
+            
+            {/* Enhanced trust indicators with animations */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-professional-emerald/20 hover:bg-card/80 transition-all duration-300">
+                <div className="flex-shrink-0 w-10 h-10 bg-professional-emerald/10 rounded-full flex items-center justify-center">
+                  <CheckCircle className="h-5 w-5 text-professional-emerald" />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-foreground">$50M+</div>
+                  <div className="text-sm text-foreground/60">Cost Savings</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-professional-blue/20 hover:bg-card/80 transition-all duration-300">
+                <div className="flex-shrink-0 w-10 h-10 bg-professional-blue/10 rounded-full flex items-center justify-center">
+                  <Users className="h-5 w-5 text-professional-blue" />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-foreground">98%</div>
+                  <div className="text-sm text-foreground/60">Satisfaction</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-professional-purple/20 hover:bg-card/80 transition-all duration-300">
+                <div className="flex-shrink-0 w-10 h-10 bg-professional-purple/10 rounded-full flex items-center justify-center">
+                  <TrendingUp className="h-5 w-5 text-professional-purple" />
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-foreground">300%</div>
+                  <div className="text-sm text-foreground/60">Average ROI</div>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-            Premium AI Automation
-            <span className="block bg-gradient-professional-primary bg-clip-text text-transparent">
-              for Established Businesses
-            </span>
-          </h1>
-          
-          <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mx-auto mb-10">
-            Optimize operations, reduce costs, and drive exponential growth through intelligent automation solutions designed for enterprise-scale transformation.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button className="w-full sm:w-auto">
-              Schedule Free Consultation
-            </Button>
-            <Button variant="secondary" href="#services" className="w-full sm:w-auto">
-              View Our Solutions
-            </Button>
-          </div>
-          
-          {/* Trust indicators */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60">
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-professional-blue">$50M+</div>
-              <div className="text-sm text-foreground/60">Cost Savings</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-professional-emerald">98%</div>
-              <div className="text-sm text-foreground/60">Client Satisfaction</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-professional-purple">75%</div>
-              <div className="text-sm text-foreground/60">Process Efficiency</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-professional-orange">24/7</div>
-              <div className="text-sm text-foreground/60">AI Operations</div>
+          {/* Interactive dashboard mockup */}
+          <div className="relative">
+            <div className="relative bg-card border rounded-2xl p-6 shadow-professional hover:shadow-professional-lg transition-all duration-500 hover:scale-[1.02]">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gradient-professional-primary rounded-lg flex items-center justify-center">
+                    <BarChart3 className="h-4 w-4 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-card-foreground">AI Performance Dashboard</h3>
+                </div>
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-professional-emerald animate-pulse"></div>
+                  <div className="w-3 h-3 rounded-full bg-professional-orange animate-pulse delay-300"></div>
+                  <div className="w-3 h-3 rounded-full bg-professional-blue animate-pulse delay-700"></div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Process Automation</span>
+                    <span className="text-sm font-semibold text-professional-emerald">+240% Efficiency</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
+                    <div className="bg-gradient-professional-primary h-3 rounded-full animate-pulse transition-all duration-1000" style={{width: '85%'}}></div>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Cost Reduction</span>
+                    <span className="text-sm font-semibold text-professional-blue">-45% Operating Costs</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
+                    <div className="bg-gradient-professional-secondary h-3 rounded-full animate-pulse delay-500 transition-all duration-1000" style={{width: '92%'}}></div>
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Revenue Growth</span>
+                    <span className="text-sm font-semibold text-professional-purple">+180% Revenue</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
+                    <div className="bg-gradient-professional-accent h-3 rounded-full animate-pulse delay-1000 transition-all duration-1000" style={{width: '78%'}}></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Live status indicator */}
+              <div className="flex items-center justify-between mt-6 pt-4 border-t border-border/30">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-professional-emerald rounded-full animate-pulse"></div>
+                  <span className="text-xs text-muted-foreground">Live data • Updated 2 min ago</span>
+                </div>
+                <button className="text-xs text-professional-blue hover:text-professional-blue/80 transition-colors">
+                  View Details →
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -216,7 +322,6 @@ function Hero() {
     </section>
   );
 }
-
 function LogoCloud() {
   const companies = ["Enterprise Corp", "Global Industries", "Tech Solutions", "Innovation Labs", "Future Systems"];
   return (
