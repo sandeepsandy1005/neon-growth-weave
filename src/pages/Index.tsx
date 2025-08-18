@@ -153,7 +153,7 @@ function ProfessionalCard({ children, className = "" }) {
 
 function Hero() {
   const [typedText, setTypedText] = useState("");
-  const phrases = ["Dreams", "Ideas", "Potential", "Success"];
+  const phrases = ["Dreams", "Ideas", "Potential", "Success", "Business"];
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   useEffect(() => {
