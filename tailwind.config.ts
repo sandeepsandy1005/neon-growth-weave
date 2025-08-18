@@ -62,21 +62,23 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				professional: {
-					blue: 'hsl(var(--professional-blue))',
-					purple: 'hsl(var(--professional-purple))', 
-					emerald: 'hsl(var(--professional-emerald))',
-					orange: 'hsl(var(--professional-orange))'
+				neon: {
+					cyan: 'hsl(var(--neon-cyan-color))',
+					purple: 'hsl(var(--neon-purple-color))',
+					pink: 'hsl(var(--neon-pink-color))',
+					blue: 'hsl(var(--neon-blue-color))'
 				}
 			},
 			backgroundImage: {
-				'gradient-professional-primary': 'var(--gradient-professional-primary)',
-				'gradient-professional-subtle': 'var(--gradient-professional-subtle)'
+				'gradient-neon-primary': 'var(--gradient-neon-primary)',
+				'gradient-neon-subtle': 'var(--gradient-neon-subtle)',
+				'gradient-neon-glow': 'var(--gradient-neon-glow)'
 			},
 			boxShadow: {
-				'professional-sm': 'var(--shadow-professional-sm)',
-				'professional-md': 'var(--shadow-professional-md)', 
-				'professional-lg': 'var(--shadow-professional-lg)'
+				'neon-sm': 'var(--shadow-neon-sm)',
+				'neon-md': 'var(--shadow-neon-md)',
+				'neon-lg': 'var(--shadow-neon-lg)',
+				'neon-cyan': 'var(--shadow-neon-cyan)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

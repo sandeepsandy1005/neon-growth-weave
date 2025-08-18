@@ -2,64 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* AutomateZAI - Professional AI Automation Design System
-All colors MUST be HSL for consistency.
+/* Grow with AI - Neon Design System 
+All colors MUST be HSL for consistency with neon aesthetic.
 */
 
 @layer base {
   :root {
-    /* Professional dark theme */
-    --background: 220 30% 5%;     /* Deep professional blue-gray */
+    /* Neon dark theme */
+    --background: 235 25% 3%;      /* Ultra dark navy */
     --foreground: 210 40% 98%;
     
-    /* Professional palette */
-    --accent-blue: 217 91% 60%;   /* Professional blue */
-    --accent-purple: 259 94% 51%; /* Deep purple */
-    --accent-emerald: 142 76% 36%; /* Professional green */
-    --accent-orange: 25 95% 53%;  /* Warm orange accent */
+    /* Neon color palette */
+    --neon-cyan: 186 100% 69%;     /* Electric cyan */
+    --neon-purple: 271 100% 65%;   /* Electric purple */
+    --neon-pink: 320 100% 74%;     /* Electric pink */
+    --neon-blue: 215 100% 60%;     /* Electric blue */
     
-    /* Component colors using professional palette */
-    --primary: 217 91% 60%;        /* Professional blue */
+    /* Component colors using neon palette */
+    --primary: 271 100% 65%;       /* Electric purple */
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 220 30% 12%;      /* Professional dark card bg */
+    --secondary: 235 25% 8%;       /* Dark card background */
     --secondary-foreground: 210 40% 98%;
     
-    --card: 220 30% 8%;            /* Professional card background */
+    --card: 235 25% 6%;            /* Card background */
     --card-foreground: 210 40% 98%;
     
-    --popover: 220 30% 8%;
+    --popover: 235 25% 6%;
     --popover-foreground: 210 40% 98%;
     
-    --muted: 220 30% 15%;
+    --muted: 235 25% 12%;
     --muted-foreground: 215 20% 65%;
     
-    --accent: 217 91% 60%;         /* Professional blue accent */
-    --accent-foreground: 220 30% 5%;
+    --accent: 186 100% 69%;        /* Electric cyan accent */
+    --accent-foreground: 235 25% 3%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 220 30% 15%;
-    --input: 220 30% 10%;
-    --ring: 217 91% 60%;
+    --border: 235 25% 12%;
+    --input: 235 25% 8%;
+    --ring: 271 100% 65%;
     
     --radius: 1rem;
     
-    /* Professional gradients */
-    --gradient-professional-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(259 94% 51%), hsl(142 76% 36%));
-    --gradient-professional-subtle: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(259 94% 51% / 0.1));
+    /* Neon gradients */
+    --gradient-neon-primary: linear-gradient(135deg, hsl(271 100% 65%), hsl(186 100% 69%), hsl(320 100% 74%));
+    --gradient-neon-subtle: linear-gradient(135deg, hsl(271 100% 65% / 0.1), hsl(186 100% 69% / 0.1));
+    --gradient-neon-glow: linear-gradient(135deg, hsl(271 100% 65% / 0.3), hsl(186 100% 69% / 0.3));
     
-    /* Professional shadows */
-    --shadow-professional-sm: 0 0 20px hsl(217 91% 60% / 0.15);
-    --shadow-professional-md: 0 0 40px hsl(217 91% 60% / 0.25);
-    --shadow-professional-lg: 0 0 60px hsl(217 91% 60% / 0.35);
+    /* Neon shadows with glow effects */
+    --shadow-neon-sm: 0 0 20px hsl(271 100% 65% / 0.4), 0 0 40px hsl(271 100% 65% / 0.2);
+    --shadow-neon-md: 0 0 30px hsl(271 100% 65% / 0.5), 0 0 60px hsl(271 100% 65% / 0.3);
+    --shadow-neon-lg: 0 0 40px hsl(271 100% 65% / 0.6), 0 0 80px hsl(271 100% 65% / 0.4);
+    --shadow-neon-cyan: 0 0 30px hsl(186 100% 69% / 0.5), 0 0 60px hsl(186 100% 69% / 0.3);
     
-    /* Professional color tokens for direct use */
-    --professional-blue: 217 91% 60%;
-    --professional-purple: 259 94% 51%;
-    --professional-emerald: 142 76% 36%;
-    --professional-orange: 25 95% 53%;
+    /* Neon color tokens for direct use */
+    --neon-cyan-color: 186 100% 69%;
+    --neon-purple-color: 271 100% 65%;
+    --neon-pink-color: 320 100% 74%;
+    --neon-blue-color: 215 100% 60%;
     
     /* Animation timings */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

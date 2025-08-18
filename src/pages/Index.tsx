@@ -1,31 +1,33 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles } from "lucide-react";
+import { MouseFollower } from '@/components/MouseFollower';
+import logoImage from '@/assets/grow-with-ai-logo.png';
 
 const nav = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Features", href: "#features" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" }
 ];
 
-// Professional palette using design system colors
+// Neon palette using design system colors
 const palette = {
   bg: "hsl(var(--background))",
-  blue: "hsl(var(--accent-blue))",
-  purple: "hsl(var(--accent-purple))",
-  emerald: "hsl(var(--accent-emerald))",
-  orange: "hsl(var(--accent-orange))",
+  cyan: "hsl(var(--neon-cyan-color))",
+  purple: "hsl(var(--neon-purple-color))",
+  pink: "hsl(var(--neon-pink-color))",
+  blue: "hsl(var(--neon-blue-color))",
 };
 
-// AutomateZAI Brand Logo
+// Grow with AI Brand Logo
 function BrandLogo({ className = "h-8 w-8" }) {
   return (
-    <div className={`${className} bg-gradient-professional-primary rounded-lg flex items-center justify-center`}>
-      <Cog className="h-5 w-5 text-white" />
-    </div>
+    <img 
+      src={logoImage} 
+      alt="Grow with AI Logo" 
+      className={`${className} object-contain`}
+    />
   );
 }
 
@@ -57,7 +59,7 @@ function Button({ children, href = "#contact", variant = "primary", className = 
 
   const base = "relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-200 will-change-transform focus:outline-none";
   const style = variant === "primary"
-    ? "text-white bg-gradient-professional-primary shadow-professional-md hover:shadow-professional-lg"
+    ? "text-white bg-gradient-neon-primary shadow-neon-md hover:shadow-neon-lg border-0"
     : "text-foreground bg-card border border-border hover:bg-muted/50";
 
   return (
@@ -83,7 +85,7 @@ function NavBar() {
       <Container className="flex h-16 items-center justify-between">
         <a href="#home" className="flex items-center gap-3">
           <BrandLogo />
-          <span className="text-foreground text-xl font-bold tracking-tight">AutomateZAI</span>
+          <span className="text-foreground text-xl font-bold tracking-tight bg-gradient-neon-primary bg-clip-text text-transparent">Grow with AI</span>
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {nav.map((n) => (
@@ -151,7 +153,7 @@ function ProfessionalCard({ children, className = "" }) {
 
 function Hero() {
   const [typedText, setTypedText] = useState("");
-  const phrases = ["Enterprise", "Innovation", "Efficiency", "Growth"];
+  const phrases = ["Dreams", "Ideas", "Potential", "Success"];
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   useEffect(() => {
@@ -179,128 +181,128 @@ function Hero() {
 
   return (
     <section id="home" className="relative isolate pt-20 text-foreground overflow-hidden bg-background">
-      {/* Advanced grid pattern */}
-      <div aria-hidden className="absolute inset-0 opacity-[0.02]">
+      {/* Neon grid pattern */}
+      <div aria-hidden className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
-          backgroundImage: "linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(hsl(var(--neon-cyan-color)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--neon-purple-color)) 1px, transparent 1px)",
           backgroundSize: "60px 60px"
         }} />
       </div>
 
-      {/* Multiple animated gradient orbs */}
+      {/* Multiple animated neon orbs */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-professional-blue/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-professional-purple/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-professional-emerald/3 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-neon-purple/20 rounded-full blur-3xl animate-pulse shadow-neon-lg"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-cyan/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-neon-cyan"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-neon-pink/15 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
       <Container className="relative z-10 py-20 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-2 text-sm text-foreground/70 mb-8 hover:border-professional-blue/30 transition-colors">
-              <div className="w-2 h-2 bg-professional-emerald rounded-full animate-pulse"></div>
-              Trusted by Fortune 500 Companies
+            <div className="inline-flex items-center gap-2 rounded-full bg-card border border-neon-cyan/30 px-4 py-2 text-sm text-neon-cyan mb-8 hover:border-neon-cyan/50 transition-colors shadow-neon-sm">
+              <div className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></div>
+              🚀 Supercharge Your Growth
             </div>
             
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-              <span className="block">Premium AI</span>
-              <span className="block">Automation for</span>
-              <span className="block bg-gradient-professional-primary bg-clip-text text-transparent min-h-[1.2em]">
-                {typedText}<span className="animate-pulse text-professional-blue">|</span>
+              <span className="block">Grow Your</span>
+              <span className="block bg-gradient-neon-primary bg-clip-text text-transparent min-h-[1.2em]">
+                {typedText}<span className="animate-pulse text-neon-cyan">|</span>
               </span>
+              <span className="block">with AI</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mb-10 leading-relaxed">
-              Transform your enterprise with cutting-edge AI automation. Optimize operations, reduce costs by up to 60%, and drive exponential growth with our proven solutions.
+              Unlock your potential with AI-powered growth solutions. Transform ideas into reality, scale faster than ever, and achieve extraordinary results.
             </p>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
-              <Button className="w-full sm:w-auto group">
-                Schedule Strategy Session
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <Button className="w-full sm:w-auto group bg-gradient-neon-primary hover:shadow-neon-lg">
+                Start Growing Today
+                <Rocket className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="secondary" href="#case-studies" className="w-full sm:w-auto">
-                View Success Stories
+              <Button variant="secondary" href="#features" className="w-full sm:w-auto border-neon-purple text-neon-purple hover:bg-neon-purple/20">
+                Explore Features
               </Button>
             </div>
             
-            {/* Enhanced trust indicators with animations */}
+            {/* Enhanced trust indicators with neon styling */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-professional-emerald/20 hover:bg-card/80 transition-all duration-300">
-                <div className="flex-shrink-0 w-10 h-10 bg-professional-emerald/10 rounded-full flex items-center justify-center">
-                  <CheckCircle className="h-5 w-5 text-professional-emerald" />
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-neon-cyan/30 hover:bg-card/80 transition-all duration-300 hover:shadow-neon-sm">
+                <div className="flex-shrink-0 w-10 h-10 bg-neon-cyan/20 rounded-full flex items-center justify-center">
+                  <Rocket className="h-5 w-5 text-neon-cyan" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-foreground">$50M+</div>
-                  <div className="text-sm text-foreground/60">Cost Savings</div>
+                  <div className="text-2xl font-bold text-foreground">10x</div>
+                  <div className="text-sm text-foreground/60">Growth Rate</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-professional-blue/20 hover:bg-card/80 transition-all duration-300">
-                <div className="flex-shrink-0 w-10 h-10 bg-professional-blue/10 rounded-full flex items-center justify-center">
-                  <Users className="h-5 w-5 text-professional-blue" />
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-neon-purple/30 hover:bg-card/80 transition-all duration-300 hover:shadow-neon-sm">
+                <div className="flex-shrink-0 w-10 h-10 bg-neon-purple/20 rounded-full flex items-center justify-center">
+                  <Sparkles className="h-5 w-5 text-neon-purple" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-foreground">98%</div>
-                  <div className="text-sm text-foreground/60">Satisfaction</div>
+                  <div className="text-2xl font-bold text-foreground">1M+</div>
+                  <div className="text-sm text-foreground/60">Dreams Realized</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-professional-purple/20 hover:bg-card/80 transition-all duration-300">
-                <div className="flex-shrink-0 w-10 h-10 bg-professional-purple/10 rounded-full flex items-center justify-center">
-                  <TrendingUp className="h-5 w-5 text-professional-purple" />
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-neon-pink/30 hover:bg-card/80 transition-all duration-300 hover:shadow-neon-sm">
+                <div className="flex-shrink-0 w-10 h-10 bg-neon-pink/20 rounded-full flex items-center justify-center">
+                  <TrendingUp className="h-5 w-5 text-neon-pink" />
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-foreground">300%</div>
-                  <div className="text-sm text-foreground/60">Average ROI</div>
+                  <div className="text-2xl font-bold text-foreground">95%</div>
+                  <div className="text-sm text-foreground/60">Success Rate</div>
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Interactive dashboard mockup */}
+          {/* Interactive growth dashboard mockup */}
           <div className="relative">
-            <div className="relative bg-card border rounded-2xl p-6 shadow-professional hover:shadow-professional-lg transition-all duration-500 hover:scale-[1.02]">
+            <div className="relative bg-card border border-neon-cyan/30 rounded-2xl p-6 shadow-neon-md hover:shadow-neon-lg transition-all duration-500 hover:scale-[1.02]">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-professional-primary rounded-lg flex items-center justify-center">
-                    <BarChart3 className="h-4 w-4 text-white" />
+                  <div className="w-8 h-8 bg-gradient-neon-primary rounded-lg flex items-center justify-center">
+                    <TrendingUp className="h-4 w-4 text-white" />
                   </div>
-                  <h3 className="font-semibold text-card-foreground">AI Performance Dashboard</h3>
+                  <h3 className="font-semibold text-card-foreground">Growth Dashboard</h3>
                 </div>
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-professional-emerald animate-pulse"></div>
-                  <div className="w-3 h-3 rounded-full bg-professional-orange animate-pulse delay-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-professional-blue animate-pulse delay-700"></div>
+                  <div className="w-3 h-3 rounded-full bg-neon-cyan animate-pulse"></div>
+                  <div className="w-3 h-3 rounded-full bg-neon-purple animate-pulse delay-300"></div>
+                  <div className="w-3 h-3 rounded-full bg-neon-pink animate-pulse delay-700"></div>
                 </div>
               </div>
               
               <div className="space-y-6">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Process Automation</span>
-                    <span className="text-sm font-semibold text-professional-emerald">+240% Efficiency</span>
+                    <span className="text-sm text-muted-foreground">AI Optimization</span>
+                    <span className="text-sm font-semibold text-neon-cyan">+340% Efficiency</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-                    <div className="bg-gradient-professional-primary h-3 rounded-full animate-pulse transition-all duration-1000" style={{width: '85%'}}></div>
+                    <div className="bg-gradient-neon-primary h-3 rounded-full animate-pulse transition-all duration-1000 shadow-neon-sm" style={{width: '90%'}}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Cost Reduction</span>
-                    <span className="text-sm font-semibold text-professional-blue">-45% Operating Costs</span>
+                    <span className="text-sm text-muted-foreground">Growth Acceleration</span>
+                    <span className="text-sm font-semibold text-neon-purple">+250% Faster</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-                    <div className="bg-gradient-professional-secondary h-3 rounded-full animate-pulse delay-500 transition-all duration-1000" style={{width: '92%'}}></div>
+                    <div className="bg-neon-purple h-3 rounded-full animate-pulse delay-500 transition-all duration-1000 shadow-neon-sm" style={{width: '85%'}}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Revenue Growth</span>
-                    <span className="text-sm font-semibold text-professional-purple">+180% Revenue</span>
+                    <span className="text-sm text-muted-foreground">Success Rate</span>
+                    <span className="text-sm font-semibold text-neon-pink">+180% Better</span>
                   </div>
                   <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-                    <div className="bg-gradient-professional-accent h-3 rounded-full animate-pulse delay-1000 transition-all duration-1000" style={{width: '78%'}}></div>
+                    <div className="bg-neon-pink h-3 rounded-full animate-pulse delay-1000 transition-all duration-1000 shadow-neon-sm" style={{width: '95%'}}></div>
                   </div>
                 </div>
               </div>
@@ -308,10 +310,10 @@ function Hero() {
               {/* Live status indicator */}
               <div className="flex items-center justify-between mt-6 pt-4 border-t border-border/30">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-professional-emerald rounded-full animate-pulse"></div>
-                  <span className="text-xs text-muted-foreground">Live data • Updated 2 min ago</span>
+                  <div className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></div>
+                  <span className="text-xs text-muted-foreground">Live growth • Updated now</span>
                 </div>
-                <button className="text-xs text-professional-blue hover:text-professional-blue/80 transition-colors">
+                <button className="text-xs text-neon-cyan hover:text-neon-cyan/80 transition-colors">
                   View Details →
                 </button>
               </div>
@@ -954,6 +956,7 @@ function Footer() {
 export default function Index() {
   return (
     <div className="min-h-screen font-sans bg-background">
+      <MouseFollower />
       <NavBar />
       <main>
         <Hero />
