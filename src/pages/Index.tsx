@@ -668,12 +668,12 @@ const testimonials = [
   { 
     name: "Sarah Chen", 
     role: "CTO, Global Manufacturing", 
-    text: "AutomateZAI transformed our entire production pipeline. The ROI was evident within the first quarter of implementation." 
+    text: "Grow with AI transformed our entire production pipeline. The ROI was evident within the first quarter of implementation." 
   },
   { 
     name: "Michael Rodriguez", 
     role: "VP Operations, Financial Services", 
-    text: "The level of expertise and support provided by AutomateZAI is unmatched. They truly understand enterprise automation needs." 
+    text: "The level of expertise and support provided by Grow with AI is unmatched. They truly understand enterprise automation needs." 
   },
 ];
 
@@ -777,7 +777,7 @@ function Contact() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-lg text-foreground/70 mb-8">
-              Schedule a free consultation to discuss your automation needs and discover how AutomateZAI can drive measurable growth for your organization.
+              Schedule a free consultation to discuss your automation needs and discover how Grow with AI can drive measurable growth for your organization.
             </p>
             
             <div className="space-y-6">
@@ -878,7 +878,7 @@ function Contact() {
                 required 
               />
               <label className="text-xs text-foreground/70">
-                I agree to receive communications from AutomateZAI about our services and solutions. I understand I can unsubscribe at any time.
+                I agree to receive communications from Grow with AI about our services and solutions. I understand I can unsubscribe at any time.
               </label>
             </div>
             
@@ -900,10 +900,10 @@ function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <BrandLogo />
-              <span className="text-foreground text-xl font-bold">AutomateZAI</span>
+              <span className="text-foreground text-xl font-bold bg-gradient-neon-primary bg-clip-text text-transparent">Grow with AI</span>
             </div>
             <p className="text-foreground/70 text-sm leading-relaxed">
-              Premium AI automation solutions for established businesses. Transform your operations, reduce costs, and drive exponential growth.
+              AI-powered growth solutions that unlock your potential and transform ideas into extraordinary results.
             </p>
           </div>
           
@@ -930,9 +930,9 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
-              <li>hello@automatezai.com</li>
+              <li>hello@growwithai.com</li>
               <li>+1 (555) 123-4567</li>
-              <li>@automatezai</li>
+              <li>@growwithai</li>
               <li>LinkedIn</li>
             </ul>
           </div>
@@ -940,7 +940,7 @@ function Footer() {
         
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-xs text-foreground/60">
-            © {new Date().getFullYear()} AutomateZAI. All rights reserved.
+            © {new Date().getFullYear()} Grow with AI. All rights reserved.
           </div>
           <div className="flex items-center gap-6 text-xs text-foreground/60">
             <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
