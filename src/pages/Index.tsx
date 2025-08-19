@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
 import logoImage from '@/assets/grow-with-ai-logo.png';
 
@@ -347,25 +347,32 @@ function LogoCloud() {
 
 const services = [
   {
-    icon: Brain,
-    title: "Intelligent Process Automation",
-    desc: "Transform complex workflows with AI-powered automation that learns and adapts to your business needs.",
-    features: ["Workflow Optimization", "Intelligent Decision Making", "Seamless Integration"],
-    color: "professional-blue"
-  },
-  {
-    icon: BarChart3,
-    title: "Predictive Analytics & BI",
-    desc: "Harness the power of data with advanced analytics and business intelligence solutions.",
-    features: ["Real-time Insights", "Predictive Modeling", "Custom Dashboards"],
-    color: "professional-purple"
-  },
-  {
     icon: Cog,
-    title: "Enterprise AI Solutions",
-    desc: "Comprehensive AI implementation designed for large-scale enterprise operations.",
-    features: ["Scalable Architecture", "Security Compliance", "24/7 Support"],
-    color: "professional-emerald"
+    title: "Autonomous AI Agents",
+    desc: "The Agentic era has begun. Businesses not deploying AI agents in 2025 are already behind. These systems don't just automate—they act. One instruction, then they wait. Results show up. No micromanaging. From internal operations to customer-facing tasks, these agents work round the clock—so you don't have to.",
+    features: ["Intelligent Decision Making", "24/7 Operation", "No Micromanaging"],
+    color: "neon-purple"
+  },
+  {
+    icon: Zap,
+    title: "Workflow Automations",
+    desc: "No inputs needed. These automations run on their own—daily, weekly, or on triggers. From analysing data and generating reports to sending invoices or onboarding clients—everything you usually do on weekends gets done before Monday. Quiet, fast, and always on.",
+    features: ["Trigger-Based Automation", "Data Analysis", "Report Generation"],
+    color: "neon-purple"
+  },
+  {
+    icon: MessageCircle,
+    title: "AI Voice Agents",
+    desc: "Inbound or outbound—AI voice agents talk to your leads and customers in real-time. They answer, qualify, remind, and follow up—so you don't have to. 2025's standard for modern business communication.",
+    features: ["Real-time Communication", "Lead Qualification", "Follow-up Management"],
+    color: "neon-purple"
+  },
+  {
+    icon: Clock,
+    title: "Social Media AI Systems",
+    desc: "AI handles your content, comments, and conversations. It writes, schedules, replies, and even reaches out. Whether it's building brand presence or supporting leads—your AI works the platform while you run the business.",
+    features: ["Content Creation", "Automated Scheduling", "Engagement Management"],
+    color: "neon-purple"
   },
 ];
 
