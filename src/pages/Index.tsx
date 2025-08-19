@@ -561,111 +561,7 @@ function Process() {
   );
 }
 
-const pricingPlans = [
-  {
-    name: "Professional",
-    price: "$15,000",
-    period: "/month",
-    desc: "Perfect for growing businesses ready to automate key processes.",
-    features: [
-      "Up to 5 automated workflows",
-      "Basic analytics dashboard", 
-      "Email support",
-      "Standard integrations",
-      "Monthly strategy sessions"
-    ],
-    cta: "Start Professional Plan",
-  },
-  {
-    name: "Enterprise",
-    price: "$45,000",
-    period: "/month", 
-    desc: "Comprehensive automation for large-scale operations.",
-    features: [
-      "Unlimited automated workflows",
-      "Advanced AI analytics",
-      "Dedicated success manager",
-      "Custom integrations",
-      "24/7 priority support",
-      "Compliance & security"
-    ],
-    cta: "Contact Sales",
-    popular: true,
-  },
-  {
-    name: "Enterprise Plus",
-    price: "Custom",
-    period: "",
-    desc: "Tailored solutions for complex enterprise requirements.",
-    features: [
-      "Custom AI model development",
-      "Multi-location deployment",
-      "Advanced security features",
-      "Dedicated development team",
-      "SLA guarantees",
-      "Training & certification"
-    ],
-    cta: "Schedule Consultation",
-  },
-];
 
-function Pricing() {
-  return (
-    <section id="pricing" className="py-20 bg-background">
-      <Container>
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Investment Plans</h2>
-          <p className="text-lg text-foreground/70">
-            Transparent pricing designed to deliver exceptional ROI. All plans include implementation, training, and ongoing optimization.
-          </p>
-        </div>
-        
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {pricingPlans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-2xl border p-8 ${
-                plan.popular 
-                  ? "border-professional-blue/50 bg-professional-blue/5 ring-1 ring-professional-blue/20" 
-                  : "border-border bg-card"
-              }`}
-            >
-              {plan.popular && (
-                <div className="inline-block px-3 py-1 rounded-full bg-professional-blue text-white text-xs font-medium mb-4">
-                  Most Popular
-                </div>
-              )}
-              
-              <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-              <p className="text-foreground/70 text-sm mb-6">{plan.desc}</p>
-              
-              <div className="flex items-end gap-1 mb-6">
-                <span className="text-3xl font-bold">{plan.price}</span>
-                <span className="text-foreground/60">{plan.period}</span>
-              </div>
-              
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-professional-emerald mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground/80">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Button 
-                variant={plan.popular ? "primary" : "secondary"} 
-                className="w-full"
-              >
-                {plan.cta}
-              </Button>
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
 
 const testimonials = [
   { 
@@ -968,7 +864,7 @@ export default function Index() {
         <Solutions />
         <CaseStudies />
         <Process />
-        <Pricing />
+        
         <Testimonials />
         <FAQ />
         <Contact />
