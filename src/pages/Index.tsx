@@ -349,29 +349,29 @@ const services = [
   {
     icon: Cog,
     title: "Autonomous AI Agents",
-    desc: "The Agentic era has begun. Businesses not deploying AI agents in 2025 are already behind. These systems don't just automate—they act. One instruction, then they wait. Results show up. No micromanaging. From internal operations to customer-facing tasks, these agents work round the clock—so you don't have to.",
-    features: ["Intelligent Decision Making", "24/7 Operation", "No Micromanaging"],
+    desc: "The Agentic era has begun. Businesses not deploying AI agents in 2025 are already behind. These systems don't just automate—they act. One entry point, one instruction, then wait. Results show up. No micromanaging. From internal operations to customer-facing tasks, these agents work round the clock—so you don't have to.",
+    features: ["One Entry Point", "No Micromanaging", "24/7 Operation"],
     color: "neon-purple"
   },
   {
     icon: Zap,
     title: "Workflow Automations",
     desc: "No inputs needed. These automations run on their own—daily, weekly, or on triggers. From analysing data and generating reports to sending invoices or onboarding clients—everything you usually do on weekends gets done before Monday. Quiet, fast, and always on.",
-    features: ["Trigger-Based Automation", "Data Analysis", "Report Generation"],
+    features: ["Trigger-Based", "Weekend Work Done", "Always On"],
     color: "neon-purple"
   },
   {
     icon: MessageCircle,
     title: "AI Voice Agents",
     desc: "Inbound or outbound—AI voice agents talk to your leads and customers in real-time. They answer, qualify, remind, and follow up—so you don't have to. 2025's standard for modern business communication.",
-    features: ["Real-time Communication", "Lead Qualification", "Follow-up Management"],
+    features: ["Real-time Communication", "Lead Qualification", "Modern Standard"],
     color: "neon-purple"
   },
   {
     icon: Clock,
     title: "Social Media AI Systems",
-    desc: "AI handles your content, comments, and conversations. It writes, schedules, replies, and even reaches out. Whether it's building brand presence or supporting leads—your AI works the platform while you run the business.",
-    features: ["Content Creation", "Automated Scheduling", "Engagement Management"],
+    desc: "AI handles your content, comments, and conversations. It writes, schedules, replies, and even reaches out. Whether it's building brand presence or supporting leads—your AI system works the platform while you run the business.",
+    features: ["Content Creation", "Automated Engagement", "Brand Building"],
     color: "neon-purple"
   },
 ];
