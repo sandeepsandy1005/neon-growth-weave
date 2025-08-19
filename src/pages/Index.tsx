@@ -21,13 +21,16 @@ const palette = {
 };
 
 // Grow with AI Brand Logo
-function BrandLogo({ className = "h-8 w-8" }) {
+function BrandLogo({ className = "h-12 w-12" }) {
   return (
-    <img 
-      src={logoImage} 
-      alt="Grow with AI Logo" 
-      className={`${className} object-contain`}
-    />
+    <div className={`${className} relative`}>
+      <img 
+        src={logoImage} 
+        alt="Grow with AI Logo" 
+        className="w-full h-full object-contain drop-shadow-neon-glow"
+      />
+      <div className="absolute inset-0 bg-gradient-radial from-neon-cyan-color/20 to-transparent opacity-50 blur-sm -z-10"></div>
+    </div>
   );
 }
 
