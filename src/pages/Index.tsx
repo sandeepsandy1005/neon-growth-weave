@@ -377,44 +377,124 @@ const services = [
 ];
 
 function Services() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScrollButtons = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 400;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    checkScrollButtons();
+    const current = scrollRef.current;
+    if (current) {
+      current.addEventListener('scroll', checkScrollButtons);
+      return () => current.removeEventListener('scroll', checkScrollButtons);
+    }
+  }, []);
+
   return (
-    <section id="services" className="py-20 bg-background">
-      <Container>
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+    <section id="services" className="py-20 bg-background relative overflow-hidden">
+      {/* Neon background effects */}
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-neon-cyan/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-pink/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
+      <Container className="relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-neon-primary bg-clip-text text-transparent">
             Comprehensive AI Automation Services
           </h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-xl text-foreground/70 leading-relaxed">
             End-to-end automation solutions that integrate seamlessly with your existing infrastructure and deliver measurable ROI from day one.
           </p>
         </div>
         
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <ProfessionalCard key={service.title} className="group">
-              <div className="h-full rounded-2xl border border-border bg-card p-8 hover:shadow-professional-md transition-all duration-300">
-                <div className={`inline-flex p-3 rounded-xl bg-${service.color}/10 mb-6`}>
-                  <service.icon className={`h-6 w-6 text-${service.color}`} />
+        {/* Scrolling Services Container */}
+        <div className="relative">
+          {/* Scroll buttons */}
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-card/80 backdrop-blur-sm border border-neon-cyan/30 rounded-full flex items-center justify-center text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-sm transition-all duration-300"
+            >
+              <ArrowRight className="h-5 w-5 rotate-180" />
+            </button>
+          )}
+          {canScrollRight && (
+            <button
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-card/80 backdrop-blur-sm border border-neon-cyan/30 rounded-full flex items-center justify-center text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-sm transition-all duration-300"
+            >
+              <ArrowRight className="h-5 w-5" />
+            </button>
+          )}
+          
+          {/* Services scroll container */}
+          <div 
+            ref={scrollRef}
+            className="flex gap-8 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {services.map((service, index) => (
+              <div key={service.title} className="flex-none w-[400px] group">
+                <div className="h-full rounded-2xl border border-neon-purple/30 bg-card/50 backdrop-blur-sm p-8 hover:shadow-neon-lg hover:border-neon-purple/50 transition-all duration-500 hover:scale-[1.02] hover:bg-card/80">
+                  {/* Neon glow effect on hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-neon-purple/5 via-transparent to-neon-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="inline-flex p-4 rounded-xl bg-neon-purple/20 mb-6 group-hover:bg-neon-purple/30 transition-colors duration-300 shadow-neon-sm">
+                      <service.icon className="h-8 w-8 text-neon-purple group-hover:text-neon-cyan transition-colors duration-300" />
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-transparent group-hover:bg-gradient-neon-primary group-hover:bg-clip-text transition-all duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-foreground/70 mb-8 leading-relaxed text-lg">
+                      {service.desc}
+                    </p>
+                    
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature, idx) => (
+                        <li key={feature} className="flex items-center gap-3 text-foreground/80">
+                          <div className="w-5 h-5 rounded-full bg-neon-cyan/20 flex items-center justify-center flex-shrink-0">
+                            <CheckCircle className="h-3 w-3 text-neon-cyan" />
+                          </div>
+                          <span className="font-medium">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <Button className="w-full bg-gradient-neon-primary hover:shadow-neon-md border-0 text-white font-semibold">
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-foreground/70 mb-6">{service.desc}</p>
-                
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-foreground/80">
-                      <CheckCircle className="h-4 w-4 text-professional-emerald flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <Button variant="secondary" className="w-full">
-                  Learn More
-                </Button>
               </div>
-            </ProfessionalCard>
-          ))}
+            ))}
+          </div>
+          
+          {/* Gradient overlays for scroll indication */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
         </div>
       </Container>
     </section>
@@ -865,12 +945,12 @@ export default function Index() {
       <MouseFollower />
       <NavBar />
       <main>
-        <Hero />
-        <LogoCloud />
-        <Services />
-        <Solutions />
-        <CaseStudies />
-        <Process />
+      <Hero />
+      <LogoCloud />
+      <Solutions />
+      <CaseStudies />
+      <Process />
+      <Services />
         
         <Testimonials />
         <FAQ />
