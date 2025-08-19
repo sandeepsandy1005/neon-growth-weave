@@ -685,7 +685,7 @@ function Contact() {
                   <CheckCircle className="h-6 w-6 text-professional-blue" />
                 </div>
                 <div>
-                  <div className="font-semibold">Free 60-minute consultation</div>
+                  <div className="font-semibold">Free 30-minute consultation</div>
                   <div className="text-foreground/60 text-sm">Comprehensive automation assessment</div>
                 </div>
               </div>
