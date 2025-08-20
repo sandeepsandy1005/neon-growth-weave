@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import logoImage from '@/assets/grow-with-ai-logo.png';
 
 const nav = [
@@ -403,6 +404,11 @@ function Services() {
             align: "start",
             loop: true,
           }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
