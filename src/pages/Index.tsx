@@ -947,14 +947,12 @@ export default function Index() {
       <main>
       <Hero />
       <LogoCloud />
-      <Solutions />
-      <CaseStudies />
-      <Process />
       <Services />
-        
-        <Testimonials />
-        <FAQ />
-        <Contact />
+      <Solutions />
+      <Process />
+      <Testimonials />
+      <FAQ />
+      <Contact />
       </main>
       <Footer />
     </div>
