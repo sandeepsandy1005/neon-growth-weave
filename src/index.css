@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Hide scrollbars */
 .scrollbar-hide {
   -ms-overflow-style: none;
