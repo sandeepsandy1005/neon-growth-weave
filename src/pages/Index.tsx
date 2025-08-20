@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import logoImage from '@/assets/grow-with-ai-logo.png';
 
 const nav = [
@@ -377,37 +378,6 @@ const services = [
 ];
 
 function Services() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScrollButtons = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
-    }
-  };
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 400;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  useEffect(() => {
-    checkScrollButtons();
-    const current = scrollRef.current;
-    if (current) {
-      current.addEventListener('scroll', checkScrollButtons);
-      return () => current.removeEventListener('scroll', checkScrollButtons);
-    }
-  }, []);
-
   return (
     <section id="services" className="py-20 bg-background relative overflow-hidden">
       {/* Neon background effects */}
@@ -427,75 +397,58 @@ function Services() {
           </p>
         </div>
         
-        {/* Scrolling Services Container */}
-        <div className="relative">
-          {/* Scroll buttons */}
-          {canScrollLeft && (
-            <button
-              onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-card/80 backdrop-blur-sm border border-neon-cyan/30 rounded-full flex items-center justify-center text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-sm transition-all duration-300"
-            >
-              <ArrowRight className="h-5 w-5 rotate-180" />
-            </button>
-          )}
-          {canScrollRight && (
-            <button
-              onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-card/80 backdrop-blur-sm border border-neon-cyan/30 rounded-full flex items-center justify-center text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-sm transition-all duration-300"
-            >
-              <ArrowRight className="h-5 w-5" />
-            </button>
-          )}
-          
-          {/* Services scroll container */}
-          <div 
-            ref={scrollRef}
-            className="flex gap-8 overflow-x-auto scrollbar-hide pb-4 scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
+        {/* Carousel Services Container */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
             {services.map((service, index) => (
-              <div key={service.title} className="flex-none w-[400px] group">
-                <div className="h-full rounded-2xl border border-neon-purple/30 bg-card/50 backdrop-blur-sm p-8 hover:shadow-neon-lg hover:border-neon-purple/50 transition-all duration-500 hover:scale-[1.02] hover:bg-card/80">
-                  {/* Neon glow effect on hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-neon-purple/5 via-transparent to-neon-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="inline-flex p-4 rounded-xl bg-neon-purple/20 mb-6 group-hover:bg-neon-purple/30 transition-colors duration-300 shadow-neon-sm">
-                      <service.icon className="h-8 w-8 text-neon-purple group-hover:text-neon-cyan transition-colors duration-300" />
+              <CarouselItem key={service.title} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="group h-full">
+                  <div className="h-full rounded-2xl border border-neon-purple/30 bg-card/50 backdrop-blur-sm p-8 hover:shadow-neon-lg hover:border-neon-purple/50 transition-all duration-500 hover:scale-[1.02] hover:bg-card/80 relative">
+                    {/* Neon glow effect on hover */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-neon-purple/5 via-transparent to-neon-cyan/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="inline-flex p-4 rounded-xl bg-neon-purple/20 mb-6 group-hover:bg-neon-purple/30 transition-colors duration-300 shadow-neon-sm">
+                        <service.icon className="h-8 w-8 text-neon-purple group-hover:text-neon-cyan transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-transparent group-hover:bg-gradient-neon-primary group-hover:bg-clip-text transition-all duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-foreground/70 mb-8 leading-relaxed text-lg">
+                        {service.desc}
+                      </p>
+                      
+                      <ul className="space-y-3 mb-8">
+                        {service.features.map((feature, idx) => (
+                          <li key={feature} className="flex items-center gap-3 text-foreground/80">
+                            <div className="w-5 h-5 rounded-full bg-neon-cyan/20 flex items-center justify-center flex-shrink-0">
+                              <CheckCircle className="h-3 w-3 text-neon-cyan" />
+                            </div>
+                            <span className="font-medium">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      <Button className="w-full bg-gradient-neon-primary hover:shadow-neon-md border-0 text-white font-semibold">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
                     </div>
-                    
-                    <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-transparent group-hover:bg-gradient-neon-primary group-hover:bg-clip-text transition-all duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-foreground/70 mb-8 leading-relaxed text-lg">
-                      {service.desc}
-                    </p>
-                    
-                    <ul className="space-y-3 mb-8">
-                      {service.features.map((feature, idx) => (
-                        <li key={feature} className="flex items-center gap-3 text-foreground/80">
-                          <div className="w-5 h-5 rounded-full bg-neon-cyan/20 flex items-center justify-center flex-shrink-0">
-                            <CheckCircle className="h-3 w-3 text-neon-cyan" />
-                          </div>
-                          <span className="font-medium">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <Button className="w-full bg-gradient-neon-primary hover:shadow-neon-md border-0 text-white font-semibold">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
                   </div>
                 </div>
-              </div>
+              </CarouselItem>
             ))}
-          </div>
-          
-          {/* Gradient overlays for scroll indication */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
-        </div>
+          </CarouselContent>
+          <CarouselPrevious className="bg-card/80 backdrop-blur-sm border-neon-cyan/30 text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-sm -left-12" />
+          <CarouselNext className="bg-card/80 backdrop-blur-sm border-neon-cyan/30 text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-neon-sm -right-12" />
+        </Carousel>
       </Container>
     </section>
   );
