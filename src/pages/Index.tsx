@@ -722,7 +722,7 @@ function FounderIntro() {
                 <img 
                   src="/lovable-uploads/9714d208-b235-4207-811e-b9e723e40880.png" 
                   alt="Sandeep, Founder of Grow with AI" 
-                  className="w-80 h-96 object-cover"
+                  className="w-80 object-contain"
                 />
               </div>
               {/* Subtle glow effect */}
