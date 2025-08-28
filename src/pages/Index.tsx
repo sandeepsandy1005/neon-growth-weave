@@ -160,6 +160,7 @@ function Hero() {
   const [typedText, setTypedText] = useState("");
   const phrases = ["Dreams", "Ideas", "Potential", "Success", "Business"];
   const [phraseIndex, setPhraseIndex] = useState(0);
+  const [showDashboardDetails, setShowDashboardDetails] = useState(false);
 
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
@@ -318,11 +319,64 @@ function Hero() {
                   <div className="w-2 h-2 bg-neon-cyan rounded-full animate-pulse"></div>
                   <span className="text-xs text-muted-foreground">Live growth • Updated now</span>
                 </div>
-                <button className="text-xs text-neon-cyan hover:text-neon-cyan/80 transition-colors">
-                  View Details →
+                <button 
+                  onClick={() => setShowDashboardDetails(!showDashboardDetails)}
+                  className="text-xs text-neon-cyan hover:text-neon-cyan/80 transition-colors"
+                >
+                  {showDashboardDetails ? "Hide Details ←" : "View Details →"}
                 </button>
               </div>
             </div>
+            
+            {/* Expanded dashboard details */}
+            {showDashboardDetails && (
+              <div className="mt-6 bg-card border border-neon-purple/30 rounded-2xl p-6 shadow-neon-md animate-in slide-in-from-top-2 duration-300">
+                <h4 className="font-semibold text-card-foreground mb-4 flex items-center gap-2">
+                  <BarChart3 className="h-4 w-4 text-neon-purple" />
+                  Detailed Analytics
+                </h4>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <div className="text-sm text-muted-foreground">Revenue Growth</div>
+                    <div className="text-2xl font-bold text-neon-cyan">$2.4M</div>
+                    <div className="text-xs text-green-500">+67% this quarter</div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="text-sm text-muted-foreground">Active Projects</div>
+                    <div className="text-2xl font-bold text-neon-purple">24</div>
+                    <div className="text-xs text-green-500">+8 new this month</div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="text-sm text-muted-foreground">Automation Savings</div>
+                    <div className="text-2xl font-bold text-neon-pink">847hrs</div>
+                    <div className="text-xs text-green-500">per month saved</div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="text-sm text-muted-foreground">AI Efficiency</div>
+                    <div className="text-2xl font-bold text-neon-cyan">98.7%</div>
+                    <div className="text-xs text-green-500">accuracy rate</div>
+                  </div>
+                </div>
+                
+                <div className="mt-6 pt-4 border-t border-border/30">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">Last updated: 2 minutes ago</span>
+                    <div className="flex gap-2">
+                      <button className="text-xs text-neon-cyan hover:text-neon-cyan/80 transition-colors">
+                        Export Data
+                      </button>
+                      <button className="text-xs text-neon-purple hover:text-neon-purple/80 transition-colors">
+                        Full Report
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </Container>
