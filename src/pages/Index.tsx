@@ -639,6 +639,9 @@ function Process() {
           <p className="text-lg text-foreground/70">
             A systematic approach that ensures successful AI automation implementation with minimal risk and maximum impact.
           </p>
+          <p className="text-lg text-foreground/70 mt-4">
+            At Grow with AI, we fuse advanced artificial intelligence with human expertise to help businesses eliminate inefficiencies, accelerate growth, and scale smarter. We've worked with organizations to reduce repetitive manual tasks, automate decision-making, and innovate faster—without the heavy costs of building everything in-house.
+          </p>
         </div>
         
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
