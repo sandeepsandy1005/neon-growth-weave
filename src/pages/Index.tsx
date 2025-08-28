@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock } from "lucide-react";
-
+import { MouseFollower } from '@/components/MouseFollower';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import logoImage from '@/assets/grow-with-ai-logo.png';
@@ -901,7 +901,7 @@ function Footer() {
 export default function Index() {
   return (
     <div className="min-h-screen font-sans bg-background">
-      
+      <MouseFollower />
       <NavBar />
       <main>
       <Hero />
