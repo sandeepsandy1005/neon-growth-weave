@@ -28,50 +28,73 @@
     <!-- Calendly integration script -->
     <script>
     (function(){
-      const form = document.getElementById('consult-form');
-      if (!form) return;
-
-      form.addEventListener('submit', async function(e){
-        e.preventDefault();
-
-        const first   = (document.getElementById('firstName')||{}).value?.trim() || '';
-        const last    = (document.getElementById('lastName')||{}).value?.trim() || '';
-        const email   = (document.getElementById('email')||{}).value?.trim() || '';
-        const company = (document.getElementById('company')||{}).value?.trim() || '';
-        const size    = (document.getElementById('companySize')||{}).value || '';
-        const goals   = (document.getElementById('goals')||{}).value?.trim() || '';
-        const consent = (document.getElementById('consent')||{}).checked;
-
-        if (!first || !last || !email || !consent) {
-          alert('Please complete First Name, Last Name, Email and Consent.');
+      console.log('Calendly integration script loaded');
+      
+      // Wait for DOM to be ready
+      function initCalendlyForm() {
+        const form = document.getElementById('consult-form');
+        console.log('Looking for form with id consult-form:', form);
+        
+        if (!form) {
+          console.log('Form not found, retrying in 1 second...');
+          setTimeout(initCalendlyForm, 1000);
           return;
         }
 
-        // Optional lead capture to backend/CRM here
-        // await fetch('/api/lead', {...})
+        console.log('Form found, adding event listener');
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          console.log('Form submitted');
 
-        if (window.Calendly && window.Calendly.initPopupWidget) {
-          window.Calendly.initPopupWidget({
-            url: 'https://calendly.com/growwith-ai/30min?hide_event_type_details=1&background_color=0b0f16&text_color=ffffff&primary_color=9d00ff',
-            prefill: {
-              name: `${first} ${last}`,
-              email: email,
-              customAnswers: {
-                a1: company,   // Calendly Q1: Company
-                a2: size,      // Calendly Q2: Company Size
-                a3: goals      // Calendly Q3: Automation Goals
+          const first   = (document.getElementById('firstName')||{}).value?.trim() || '';
+          const last    = (document.getElementById('lastName')||{}).value?.trim() || '';
+          const email   = (document.getElementById('email')||{}).value?.trim() || '';
+          const company = (document.getElementById('company')||{}).value?.trim() || '';
+          const size    = (document.getElementById('companySize')||{}).value || '';
+          const goals   = (document.getElementById('goals')||{}).value?.trim() || '';
+          const consent = (document.getElementById('consent')||{}).checked;
+
+          console.log('Form data:', { first, last, email, company, size, goals, consent });
+
+          if (!first || !last || !email || !consent) {
+            alert('Please complete First Name, Last Name, Email and Consent.');
+            return;
+          }
+
+          console.log('Checking Calendly availability:', !!window.Calendly, !!window.Calendly?.initPopupWidget);
+
+          if (window.Calendly && window.Calendly.initPopupWidget) {
+            console.log('Opening Calendly popup');
+            window.Calendly.initPopupWidget({
+              url: 'https://calendly.com/growwith-ai/30min?hide_event_type_details=1&background_color=0b0f16&text_color=ffffff&primary_color=9d00ff',
+              prefill: {
+                name: `${first} ${last}`,
+                email: email,
+                customAnswers: {
+                  a1: company,   // Calendly Q1: Company
+                  a2: size,      // Calendly Q2: Company Size
+                  a3: goals      // Calendly Q3: Automation Goals
+                }
+              },
+              utm: {
+                utmSource: 'website',
+                utmMedium: 'cta',
+                utmCampaign: 'grow-with-ai-consult'
               }
-            },
-            utm: {
-              utmSource: 'website',
-              utmMedium: 'cta',
-              utmCampaign: 'grow-with-ai-consult'
-            }
-          });
-        } else {
-          alert('Calendly is still loading. Please try again in a moment.');
-        }
-      });
+            });
+          } else {
+            console.error('Calendly not available:', window.Calendly);
+            alert('Calendly is still loading. Please try again in a moment.');
+          }
+        });
+      }
+
+      // Try to initialize immediately or when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCalendlyForm);
+      } else {
+        initCalendlyForm();
+      }
 
       window.addEventListener('message', function(e){
         if (!e.data || typeof e.data.event !== 'string') return;
