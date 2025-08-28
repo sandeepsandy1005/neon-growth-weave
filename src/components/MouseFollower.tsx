@@ -64,7 +64,7 @@ export const MouseFollower = () => {
             style={{
               left: trail.x - size/2,
               top: trail.y - size/2,
-              opacity: trail.opacity * 0.8,
+              opacity: trail.opacity * 0.6,
               transform: 'translate(-50%, -50%)',
               transition: `all ${100 + delay}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`,
             }}
@@ -75,12 +75,11 @@ export const MouseFollower = () => {
                 width: size,
                 height: size,
                 background: `radial-gradient(circle, 
-                  hsl(${271 + (index * 10)} 100% 65% / ${trail.opacity * 0.6}) 0%,
-                  hsl(${186 + (index * 15)} 100% 69% / ${trail.opacity * 0.4}) 40%,
-                  hsl(${320 + (index * 5)} 100% 74% / ${trail.opacity * 0.2}) 70%,
+                  hsl(${271 + (index * 10)} 100% 65% / ${trail.opacity * 0.8}) 0%,
+                  hsl(${186 + (index * 15)} 100% 69% / ${trail.opacity * 0.6}) 40%,
+                  hsl(${320 + (index * 5)} 100% 74% / ${trail.opacity * 0.4}) 70%,
                   transparent 100%
                 )`,
-                filter: `blur(${2 + index * 0.5}px)`,
               }}
             />
           </div>
@@ -100,7 +99,7 @@ export const MouseFollower = () => {
       >
         {/* Core orb */}
         <div 
-          className="relative w-4 h-4 rounded-full mix-blend-screen animate-pulse"
+          className="relative w-3 h-3 rounded-full mix-blend-screen"
           style={{
             background: `radial-gradient(circle,
               hsl(271 100% 65% / 0.9) 0%,
@@ -108,9 +107,9 @@ export const MouseFollower = () => {
               transparent 100%
             )`,
             boxShadow: `
-              0 0 20px hsl(271 100% 65% / 0.8),
-              0 0 40px hsl(186 100% 69% / 0.6),
-              0 0 60px hsl(320 100% 74% / 0.4)
+              0 0 10px hsl(271 100% 65% / 0.8),
+              0 0 20px hsl(186 100% 69% / 0.6),
+              0 0 30px hsl(320 100% 74% / 0.4)
             `,
           }}
         />
@@ -128,15 +127,13 @@ export const MouseFollower = () => {
         }}
       >
         <div 
-          className="w-12 h-12 rounded-full mix-blend-screen"
+          className="w-8 h-8 rounded-full mix-blend-screen"
           style={{
             background: `radial-gradient(circle,
               hsl(186 100% 69% / 0.4) 0%,
               hsl(271 100% 65% / 0.3) 60%,
               transparent 100%
             )`,
-            filter: 'blur(8px)',
-            animation: 'pulse 2s ease-in-out infinite',
           }}
         />
       </div>
@@ -153,16 +150,14 @@ export const MouseFollower = () => {
         }}
       >
         <div 
-          className="w-20 h-20 rounded-full mix-blend-screen"
+          className="w-16 h-16 rounded-full mix-blend-screen"
           style={{
             background: `radial-gradient(circle,
-              hsl(320 100% 74% / 0.2) 0%,
-              hsl(186 100% 69% / 0.15) 40%,
-              hsl(271 100% 65% / 0.1) 70%,
+              hsl(320 100% 74% / 0.15) 0%,
+              hsl(186 100% 69% / 0.1) 40%,
+              hsl(271 100% 65% / 0.08) 70%,
               transparent 100%
             )`,
-            filter: 'blur(15px)',
-            animation: 'pulse 3s ease-in-out infinite alternate',
           }}
         />
       </div>
@@ -179,27 +174,16 @@ export const MouseFollower = () => {
         }}
       >
         <div 
-          className="w-32 h-32 rounded-full mix-blend-screen"
+          className="w-24 h-24 rounded-full mix-blend-screen"
           style={{
             background: `radial-gradient(circle,
-              hsl(271 100% 65% / 0.08) 0%,
-              hsl(186 100% 69% / 0.06) 50%,
+              hsl(271 100% 65% / 0.05) 0%,
+              hsl(186 100% 69% / 0.03) 50%,
               transparent 100%
             )`,
-            filter: 'blur(25px)',
-            animation: 'pulse 4s ease-in-out infinite',
           }}
         />
       </div>
-
-      <style>{`
-        body {
-          cursor: none !important;
-        }
-        * {
-          cursor: none !important;
-        }
-      `}</style>
     </>
   );
 };
