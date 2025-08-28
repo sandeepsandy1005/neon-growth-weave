@@ -537,10 +537,10 @@ function Solutions() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((solution) => (
             <ProfessionalCard key={solution.name}>
-              <div className="rounded-xl border border-border bg-card p-6 hover:shadow-professional-sm transition-all duration-300">
-                <solution.icon className="h-8 w-8 text-professional-blue mb-4" />
-                <h3 className="font-semibold mb-2">{solution.name}</h3>
-                <p className="text-sm text-foreground/70">{solution.desc}</p>
+              <div className="rounded-xl border border-border bg-card p-6 hover:shadow-professional-sm hover:border-neon-cyan/30 hover:bg-card/80 transition-all duration-300 group">
+                <solution.icon className="h-8 w-8 text-professional-blue mb-4 group-hover:text-neon-cyan group-hover:scale-110 transition-all duration-300" />
+                <h3 className="font-semibold mb-2 group-hover:text-neon-cyan transition-colors duration-300">{solution.name}</h3>
+                <p className="text-sm text-foreground/70 group-hover:text-foreground/90 transition-colors duration-300">{solution.desc}</p>
               </div>
             </ProfessionalCard>
           ))}
@@ -647,14 +647,14 @@ function Process() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {process.map((step, index) => (
             <ProfessionalCard key={step.name}>
-              <div className="rounded-xl border border-border bg-card p-6 hover:shadow-professional-sm transition-all duration-300 h-full flex flex-col">
+              <div className="rounded-xl border border-border bg-card p-6 hover:shadow-professional-sm hover:border-neon-purple/30 hover:bg-card/80 transition-all duration-300 h-full flex flex-col group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-gradient-professional-primary flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-8 h-8 rounded-full bg-gradient-professional-primary flex items-center justify-center text-white font-bold text-sm group-hover:scale-110 group-hover:shadow-neon-md transition-all duration-300">
                     {step.step}
                   </div>
-                  <h3 className="font-semibold">{step.name}</h3>
+                  <h3 className="font-semibold group-hover:text-neon-purple transition-colors duration-300">{step.name}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 leading-relaxed flex-1">{step.desc}</p>
+                <p className="text-sm text-foreground/70 leading-relaxed flex-1 group-hover:text-foreground/90 transition-colors duration-300">{step.desc}</p>
               </div>
             </ProfessionalCard>
           ))}
