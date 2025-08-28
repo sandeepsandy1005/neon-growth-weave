@@ -710,6 +710,71 @@ function Testimonials() {
   );
 }
 
+function FounderIntro() {
+  return (
+    <section className="py-20 bg-background">
+      <Container>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          {/* Founder Image */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden border border-border/30 bg-card shadow-neon-md hover:shadow-neon-lg transition-all duration-500 hover:scale-[1.02]">
+                <img 
+                  src="/lovable-uploads/9714d208-b235-4207-811e-b9e723e40880.png" 
+                  alt="Sandeep, Founder of Grow with AI" 
+                  className="w-80 h-96 object-cover"
+                />
+              </div>
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-radial from-neon-cyan/10 to-transparent opacity-30 blur-xl -z-10"></div>
+            </div>
+          </div>
+          
+          {/* Content */}
+          <div className="space-y-6">
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Hey, it's <span className="bg-gradient-neon-primary bg-clip-text text-transparent">Sandeep</span>
+            </h2>
+            
+            <div className="text-lg text-foreground/80 leading-relaxed space-y-4">
+              <p>
+                I'm the founder of <strong className="text-neon-cyan">Grow with AI</strong>—where our mission is simple: Grow your business with AI.
+              </p>
+              
+              <p>
+                With AI, tasks that once took <strong className="text-neon-purple">95 minutes → 5 minutes</strong>. That's the power of automation and intelligence combined—working <strong className="text-neon-pink">24/7/365</strong> so your business runs faster, smarter, and at scale.
+              </p>
+              
+              <p>
+                At <strong className="text-neon-cyan">Grow with AI</strong>, we don't replace people—we <strong className="text-foreground">empower them</strong>. AI supercharges your team so they can focus on what truly drives growth, while the systems handle the rest.
+              </p>
+              
+              <p>
+                If you're ready to scale smarter, let's connect and make it happen.
+              </p>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="pt-4">
+              <a
+                href="https://calendly.com/growwithai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-base font-semibold text-white bg-gradient-neon-primary shadow-neon-md hover:shadow-neon-lg transition-all duration-200 will-change-transform hover:scale-[1.02] group"
+              >
+                <span className="relative z-[1] flex items-center gap-3">
+                  Book Your Free Consultation
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 function FAQ() {
   const faqItems = [
     { 
@@ -978,6 +1043,7 @@ export default function Index() {
       <Solutions />
       <Process />
       <Testimonials />
+      <FounderIntro />
       <FAQ />
       <Contact />
       </main>
