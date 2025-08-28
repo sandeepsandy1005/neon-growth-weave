@@ -812,11 +812,12 @@ function Contact() {
             </div>
           </div>
           
-          <form className="rounded-2xl border border-border bg-card p-8 space-y-6">
+          <form id="consult-form" className="rounded-2xl border border-border bg-card p-8 space-y-6">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="block text-sm font-medium mb-2">First Name</label>
                 <input 
+                  id="firstName"
                   className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
                   placeholder="John" 
                   required 
@@ -825,6 +826,7 @@ function Contact() {
               <div>
                 <label className="block text-sm font-medium mb-2">Last Name</label>
                 <input 
+                  id="lastName"
                   className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
                   placeholder="Smith" 
                   required 
@@ -835,6 +837,7 @@ function Contact() {
             <div>
               <label className="block text-sm font-medium mb-2">Business Email</label>
               <input 
+                id="email"
                 type="email" 
                 className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
                 placeholder="john.smith@company.com" 
@@ -845,6 +848,7 @@ function Contact() {
             <div>
               <label className="block text-sm font-medium mb-2">Company</label>
               <input 
+                id="company"
                 className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
                 placeholder="Company Name" 
                 required 
@@ -853,7 +857,7 @@ function Contact() {
             
             <div>
               <label className="block text-sm font-medium mb-2">Company Size</label>
-              <select className="w-full rounded-lg bg-input px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring border border-border">
+              <select id="companySize" className="w-full rounded-lg bg-input px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring border border-border">
                 <option>50-200 employees</option>
                 <option>200-1,000 employees</option>
                 <option>1,000-5,000 employees</option>
@@ -864,6 +868,7 @@ function Contact() {
             <div>
               <label className="block text-sm font-medium mb-2">Automation Goals</label>
               <textarea 
+                id="goals"
                 rows={4} 
                 className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border resize-none" 
                 placeholder="Tell us about your automation objectives and current challenges..."
@@ -872,6 +877,7 @@ function Contact() {
             
             <div className="flex items-start gap-3">
               <input 
+                id="consent"
                 type="checkbox" 
                 className="mt-1 rounded border-border bg-input" 
                 required 
@@ -881,9 +887,11 @@ function Contact() {
               </label>
             </div>
             
-            <Button className="w-full">
-              Schedule Free Consultation
-            </Button>
+            <button type="submit" className="w-full relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-200 will-change-transform focus:outline-none text-white bg-gradient-neon-primary shadow-neon-md hover:shadow-neon-lg border-0">
+              <span className="relative z-[1] flex items-center gap-2">
+                Schedule Free Consultation →
+              </span>
+            </button>
           </form>
         </div>
       </Container>

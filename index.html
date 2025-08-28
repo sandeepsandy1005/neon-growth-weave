@@ -15,10 +15,72 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@growwithai" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Calendly assets -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Calendly integration script -->
+    <script>
+    (function(){
+      const form = document.getElementById('consult-form');
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        const first   = (document.getElementById('firstName')||{}).value?.trim() || '';
+        const last    = (document.getElementById('lastName')||{}).value?.trim() || '';
+        const email   = (document.getElementById('email')||{}).value?.trim() || '';
+        const company = (document.getElementById('company')||{}).value?.trim() || '';
+        const size    = (document.getElementById('companySize')||{}).value || '';
+        const goals   = (document.getElementById('goals')||{}).value?.trim() || '';
+        const consent = (document.getElementById('consent')||{}).checked;
+
+        if (!first || !last || !email || !consent) {
+          alert('Please complete First Name, Last Name, Email and Consent.');
+          return;
+        }
+
+        // Optional lead capture to backend/CRM here
+        // await fetch('/api/lead', {...})
+
+        if (window.Calendly && window.Calendly.initPopupWidget) {
+          window.Calendly.initPopupWidget({
+            url: 'https://calendly.com/growwith-ai/30min?hide_event_type_details=1&background_color=0b0f16&text_color=ffffff&primary_color=9d00ff',
+            prefill: {
+              name: `${first} ${last}`,
+              email: email,
+              customAnswers: {
+                a1: company,   // Calendly Q1: Company
+                a2: size,      // Calendly Q2: Company Size
+                a3: goals      // Calendly Q3: Automation Goals
+              }
+            },
+            utm: {
+              utmSource: 'website',
+              utmMedium: 'cta',
+              utmCampaign: 'grow-with-ai-consult'
+            }
+          });
+        } else {
+          alert('Calendly is still loading. Please try again in a moment.');
+        }
+      });
+
+      window.addEventListener('message', function(e){
+        if (!e.data || typeof e.data.event !== 'string') return;
+        if (e.data.event === 'calendly.event_scheduled') {
+          console.log('Calendly booking complete:', e.data);
+          // fire analytics events here if needed
+        }
+      });
+    })();
+    </script>
   </body>
 </html>
