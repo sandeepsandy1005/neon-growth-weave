@@ -858,10 +858,13 @@ function Contact() {
             <div>
               <label className="block text-sm font-medium mb-2">Company Size</label>
               <select id="companySize" className="w-full rounded-lg bg-input px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring border border-border">
-                <option>50-200 employees</option>
-                <option>200-1,000 employees</option>
-                <option>1,000-5,000 employees</option>
-                <option>5,000+ employees</option>
+                <option>Just me</option>
+                <option>2-5 employees</option>
+                <option>6-10 employees</option>
+                <option>11-20 employees</option>
+                <option>20-50 employees</option>
+                <option>50-100 employees</option>
+                <option>100+ employees</option>
               </select>
             </div>
             
