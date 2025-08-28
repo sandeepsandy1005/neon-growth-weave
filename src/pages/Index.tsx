@@ -736,20 +736,20 @@ function FounderIntro() {
               Hey, it's <span className="bg-gradient-neon-primary bg-clip-text text-transparent">Sandeep</span>
             </h2>
             
-            <div className="text-xl text-foreground/90 leading-relaxed space-y-6 font-playfair">
-              <p className="text-xl leading-8">
-                I'm the founder of <span className="text-neon-cyan font-semibold italic">Grow with AI</span>—where our mission is simple: Grow your business with AI.
+            <div className="text-lg text-foreground/80 leading-relaxed space-y-4">
+              <p>
+                I'm the founder of <strong className="text-neon-cyan">Grow with AI</strong>—where our mission is simple: Grow your business with AI.
               </p>
               
-              <p className="text-xl leading-8">
-                With AI, tasks that once took <span className="text-neon-purple font-semibold">95 minutes → 5 minutes</span>. That's the power of automation and intelligence combined—working <span className="text-neon-pink font-semibold">24/7/365</span> so your business runs faster, smarter, and at scale.
+              <p>
+                With AI, tasks that once took <strong className="text-neon-purple">95 minutes → 5 minutes</strong>. That's the power of automation and intelligence combined—working <strong className="text-neon-pink">24/7/365</strong> so your business runs faster, smarter, and at scale.
               </p>
               
-              <p className="text-xl leading-8">
-                At <span className="text-neon-cyan font-semibold italic">Grow with AI</span>, we don't replace people—we <span className="text-foreground font-semibold">empower them</span>. AI supercharges your team so they can focus on what truly drives growth, while the systems handle the rest.
+              <p>
+                At <strong className="text-neon-cyan">Grow with AI</strong>, we don't replace people—we <strong className="text-foreground">empower them</strong>. AI supercharges your team so they can focus on what truly drives growth, while the systems handle the rest.
               </p>
               
-              <p className="text-xl leading-8 font-medium">
+              <p>
                 If you're ready to scale smarter, let's connect and make it happen.
               </p>
             </div>
