@@ -736,17 +736,17 @@ function FounderIntro() {
               Hey, it's <span className="bg-gradient-neon-primary bg-clip-text text-transparent">Sandeep</span>
             </h2>
             
-            <div className="text-lg text-foreground/80 leading-relaxed space-y-4">
+            <div className="text-lg text-foreground/80 leading-relaxed space-y-4 font-inter font-light">
               <p>
-                I'm the founder of <strong className="text-neon-cyan">Grow with AI</strong>—where our mission is simple: Grow your business with AI.
+                I'm the founder of <strong className="text-neon-cyan font-medium">Grow with AI</strong>—where our mission is simple: Grow your business with AI.
               </p>
               
               <p>
-                With AI, tasks that once took <strong className="text-neon-purple">95 minutes → 5 minutes</strong>. That's the power of automation and intelligence combined—working <strong className="text-neon-pink">24/7/365</strong> so your business runs faster, smarter, and at scale.
+                With AI, tasks that once took <strong className="text-neon-purple font-medium">95 minutes → 5 minutes</strong>. That's the power of automation and intelligence combined—working <strong className="text-neon-pink font-medium">24/7/365</strong> so your business runs faster, smarter, and at scale.
               </p>
               
               <p>
-                At <strong className="text-neon-cyan">Grow with AI</strong>, we don't replace people—we <strong className="text-foreground">empower them</strong>. AI supercharges your team so they can focus on what truly drives growth, while the systems handle the rest.
+                At <strong className="text-neon-cyan font-medium">Grow with AI</strong>, we don't replace people—we <strong className="text-foreground font-medium">empower them</strong>. AI supercharges your team so they can focus on what truly drives growth, while the systems handle the rest.
               </p>
               
               <p>
