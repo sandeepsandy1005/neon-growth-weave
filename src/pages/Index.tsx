@@ -590,14 +590,14 @@ function Process() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {process.map((step, index) => (
             <ProfessionalCard key={step.name}>
-              <div className="rounded-xl border border-border bg-card p-6 hover:shadow-professional-sm transition-all duration-300">
+              <div className="rounded-xl border border-border bg-card p-6 hover:shadow-professional-sm transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-full bg-gradient-professional-primary flex items-center justify-center text-white font-bold text-sm">
                     {step.step}
                   </div>
                   <h3 className="font-semibold">{step.name}</h3>
                 </div>
-                <p className="text-sm text-foreground/70 leading-relaxed">{step.desc}</p>
+                <p className="text-sm text-foreground/70 leading-relaxed flex-1">{step.desc}</p>
               </div>
             </ProfessionalCard>
           ))}
