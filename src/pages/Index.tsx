@@ -716,7 +716,7 @@ function FounderIntro() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Founder Image */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-center">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden border border-border/30 bg-card shadow-neon-md hover:shadow-neon-lg transition-all duration-500 hover:scale-[1.02]">
                 <img 
