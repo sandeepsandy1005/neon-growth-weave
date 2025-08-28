@@ -742,7 +742,7 @@ function FounderIntro() {
               </p>
               
               <p>
-                With AI, tasks that once took 95 minutes can now be done in less than 5.
+                With AI, tasks that once took <strong className="text-neon-purple">95 minutes → 5 minutes</strong>. That's the power of automation and intelligence combined—working <strong className="text-neon-pink">24/7/365</strong> so your business runs faster, smarter, and at scale.
               </p>
               
               <p>
