@@ -750,7 +750,7 @@ function FounderIntro() {
               </p>
               
               <p>
-                If you're ready to scale smarter, let's connect and make it happen.
+                If you're ready to scale smarter, let's connect and <a href="#contact" className="text-neon-cyan hover:text-neon-cyan/80 transition-colors underline decoration-neon-cyan/50 hover:decoration-neon-cyan">schedule free consultation</a>.
               </p>
             </div>
             
