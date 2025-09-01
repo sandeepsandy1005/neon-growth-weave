@@ -757,9 +757,7 @@ function FounderIntro() {
             {/* CTA Button */}
             <div className="pt-4">
               <a
-                href="https://calendly.com/growwithai"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="inline-flex items-center justify-center rounded-lg px-8 py-4 text-base font-semibold text-white bg-gradient-neon-primary shadow-neon-md hover:shadow-neon-lg transition-all duration-200 will-change-transform hover:scale-[1.02] group"
               >
                 <span className="relative z-[1] flex items-center gap-3">
