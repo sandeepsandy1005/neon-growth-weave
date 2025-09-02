@@ -1008,10 +1008,9 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
-              <li>hello@growwithai.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>sandeep@growwithai.com</li>
               <li>@growwithai</li>
-              <li>LinkedIn</li>
+              <li><a href="https://www.linkedin.com/company/108431845" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a></li>
             </ul>
           </div>
         </div>
