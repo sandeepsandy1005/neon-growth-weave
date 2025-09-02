@@ -633,7 +633,7 @@ const process = [
 
 function Process() {
   return (
-    <section id="about" className="py-20 bg-muted/10">
+    <section id="process" className="py-20 bg-muted/10">
       <Container>
         <div className="max-w-3xl mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Proven Methodology</h2>
@@ -713,7 +713,7 @@ function Testimonials() {
 
 function FounderIntro() {
   return (
-    <section className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Founder Image */}
