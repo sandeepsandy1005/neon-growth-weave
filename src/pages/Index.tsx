@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock, Youtube, Linkedin, Mail } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -984,18 +984,26 @@ function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a 
-                href="https://www.linkedin.com/company/108431845" 
+                href="https://youtube.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg bg-card border border-border hover:border-neon-cyan/50 flex items-center justify-center hover:bg-neon-cyan/10 transition-all duration-300"
               >
-                <Globe className="h-4 w-4 text-neon-cyan" />
+                <Youtube className="h-4 w-4 text-neon-cyan" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/108431845" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-lg bg-card border border-border hover:border-neon-purple/50 flex items-center justify-center hover:bg-neon-purple/10 transition-all duration-300"
+              >
+                <Linkedin className="h-4 w-4 text-neon-purple" />
               </a>
               <a 
                 href="mailto:sandeep@growwithai.com"
-                className="w-8 h-8 rounded-lg bg-card border border-border hover:border-neon-purple/50 flex items-center justify-center hover:bg-neon-purple/10 transition-all duration-300"
+                className="w-8 h-8 rounded-lg bg-card border border-border hover:border-neon-pink/50 flex items-center justify-center hover:bg-neon-pink/10 transition-all duration-300"
               >
-                <MessageCircle className="h-4 w-4 text-neon-purple" />
+                <Mail className="h-4 w-4 text-neon-pink" />
               </a>
             </div>
           </div>
