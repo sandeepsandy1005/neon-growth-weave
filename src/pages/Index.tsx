@@ -997,10 +997,11 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
+              <li><a href="#home" className="hover:text-foreground transition-colors">Home</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">Services</a></li>
+              <li><a href="#process" className="hover:text-foreground transition-colors">Process</a></li>
+              <li><a href="#testimonials" className="hover:text-foreground transition-colors">Testimonials</a></li>
               <li><a href="#about" className="hover:text-foreground transition-colors">About Us</a></li>
-              <li><a href="#case-studies" className="hover:text-foreground transition-colors">Case Studies</a></li>
-              <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
-              <li>Careers</li>
             </ul>
           </div>
           
