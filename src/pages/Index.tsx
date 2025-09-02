@@ -837,132 +837,42 @@ function Contact() {
   return (
     <section id="contact" className="py-20 bg-muted/10 scroll-mt-20 target:ring-2 target:ring-neon-cyan target:ring-opacity-50 target:bg-muted/20 transition-all duration-500">
       <Container>
-        <div className="grid gap-16 lg:grid-cols-2">
-          <div>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-lg text-foreground/70 mb-8">
-              Schedule a free consultation to discuss your automation needs and discover how Grow with AI can drive measurable growth for your organization.
-            </p>
+        <div className="max-w-md mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Contact</h2>
+          
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-neon-cyan/50 hover:bg-card/80 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-neon-cyan/20 flex items-center justify-center">
+                <Mail className="h-5 w-5 text-neon-cyan" />
+              </div>
+              <a href="mailto:sandeep@growwithai.com" className="text-foreground hover:text-neon-cyan transition-colors">
+                sandeep@growwithai.com
+              </a>
+            </div>
             
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-professional-blue/10 flex items-center justify-center">
-                  <CheckCircle className="h-6 w-6 text-professional-blue" />
-                </div>
-                <div>
-                  <div className="font-semibold">Free 30-minute consultation</div>
-                  <div className="text-foreground/60 text-sm">Comprehensive automation assessment</div>
-                </div>
+            <div className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-neon-purple/50 hover:bg-card/80 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-neon-purple/20 flex items-center justify-center">
+                <Clock className="h-5 w-5 text-neon-purple" />
               </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-professional-emerald/10 flex items-center justify-center">
-                  <TrendingUp className="h-6 w-6 text-professional-emerald" />
-                </div>
-                <div>
-                  <div className="font-semibold">Custom ROI projection</div>
-                  <div className="text-foreground/60 text-sm">Detailed cost-benefit analysis</div>
-                </div>
+              <button className="text-foreground hover:text-neon-purple transition-colors">
+                Book a Call
+              </button>
+            </div>
+            
+            <div className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/30 hover:border-neon-pink/50 hover:bg-card/80 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-neon-pink/20 flex items-center justify-center">
+                <Linkedin className="h-5 w-5 text-neon-pink" />
               </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-lg bg-professional-purple/10 flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-professional-purple" />
-                </div>
-                <div>
-                  <div className="font-semibold">No obligation proposal</div>
-                  <div className="text-foreground/60 text-sm">Tailored implementation roadmap</div>
-                </div>
-              </div>
+              <a 
+                href="https://www.linkedin.com/company/108431845" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-foreground hover:text-neon-pink transition-colors"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
-          
-          <form id="consult-form" className="rounded-2xl border border-border bg-card p-8 space-y-6">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label className="block text-sm font-medium mb-2">First Name</label>
-                <input 
-                  id="firstName"
-                  className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
-                  placeholder="John" 
-                  required 
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Last Name</label>
-                <input 
-                  id="lastName"
-                  className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
-                  placeholder="Smith" 
-                  required 
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">Business Email</label>
-              <input 
-                id="email"
-                type="email" 
-                className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
-                placeholder="john.smith@company.com" 
-                required 
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">Company</label>
-              <input 
-                id="company"
-                className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border" 
-                placeholder="Company Name" 
-                required 
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">Company Size</label>
-              <select id="companySize" className="w-full rounded-lg bg-input px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring border border-border">
-                <option>Just me</option>
-                <option>2-5 employees</option>
-                <option>6-10 employees</option>
-                <option>11-20 employees</option>
-                <option>20-50 employees</option>
-                <option>50-100 employees</option>
-                <option>100+ employees</option>
-              </select>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium mb-2">Automation Goals</label>
-              <textarea 
-                id="goals"
-                rows={4} 
-                className="w-full rounded-lg bg-input px-4 py-3 text-foreground placeholder-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring border border-border resize-none" 
-                placeholder="Tell us about your automation objectives and current challenges..."
-              />
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <input 
-                id="consent"
-                type="checkbox" 
-                className="mt-1 rounded border-border bg-input" 
-                required 
-              />
-              <label className="text-xs text-foreground/70">
-                I agree to receive communications from Grow with AI about our services and solutions. I understand I can unsubscribe at any time.
-              </label>
-            </div>
-            
-            <button type="submit" className="w-full relative inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-200 will-change-transform focus:outline-none text-white bg-gradient-neon-primary shadow-neon-md hover:shadow-neon-lg border-0">
-              <span className="relative z-[1] flex items-center gap-2">
-                Schedule Free Consultation →
-              </span>
-            </button>
-          </form>
         </div>
       </Container>
     </section>
