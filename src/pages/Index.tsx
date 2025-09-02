@@ -1048,14 +1048,9 @@ function Footer() {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-center gap-4">
           <div className="text-xs text-foreground/60">
             © {new Date().getFullYear()} Grow with AI. All rights reserved.
-          </div>
-          <div className="flex items-center gap-6 text-xs text-foreground/60">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-foreground transition-colors">Data Processing Agreement</a>
           </div>
         </div>
       </Container>
