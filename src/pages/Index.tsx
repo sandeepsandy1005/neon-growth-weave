@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock, Bot } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
@@ -715,18 +715,43 @@ function FounderIntro() {
     <section className="py-20 bg-background">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Founder Image */}
+          {/* Digital Signature */}
           <div className="flex justify-center lg:justify-center">
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden border border-border/30 bg-card shadow-neon-md hover:shadow-neon-lg transition-all duration-500 hover:scale-[1.02]">
-                <img 
-                  src="/lovable-uploads/9714d208-b235-4207-811e-b9e723e40880.png" 
-                  alt="Sandeep, Founder of Grow with AI" 
-                  className="w-80 object-contain"
-                />
+              <div className="flex flex-col items-center justify-center p-12 rounded-2xl border border-border/30 bg-card/50 backdrop-blur-sm shadow-neon-md hover:shadow-neon-lg transition-all duration-500 hover:scale-[1.02] min-h-[320px]">
+                {/* AI Icon */}
+                <div className="relative mb-8 animate-pulse">
+                  <div className="w-20 h-20 bg-gradient-neon-primary rounded-xl flex items-center justify-center shadow-neon-lg animate-[pulse_2s_ease-in-out_infinite]">
+                    <Bot className="w-10 h-10 text-white" />
+                  </div>
+                  {/* Icon glow effect */}
+                  <div className="absolute inset-0 bg-gradient-neon-primary opacity-30 blur-lg rounded-xl animate-[pulse_2s_ease-in-out_infinite_alternate]"></div>
+                </div>
+                
+                {/* Digital Signature */}
+                <div className="relative">
+                  <div className="text-6xl font-bold bg-gradient-neon-primary bg-clip-text text-transparent animate-[pulse_3s_ease-in-out_infinite_alternate] select-none" 
+                       style={{ 
+                         fontFamily: 'cursive',
+                         textShadow: '0 0 20px rgba(139, 92, 246, 0.3)'
+                       }}>
+                    Sandeep
+                  </div>
+                  {/* Signature glow effect */}
+                  <div className="absolute inset-0 text-6xl font-bold text-neon-purple/20 blur-sm animate-[pulse_3s_ease-in-out_infinite_alternate_500ms]" 
+                       style={{ fontFamily: 'cursive' }}>
+                    Sandeep
+                  </div>
+                </div>
+                
+                {/* Founder title */}
+                <div className="mt-4 text-sm text-foreground/60 tracking-widest uppercase">
+                  Founder & AI Strategist
+                </div>
               </div>
-              {/* Subtle glow effect */}
-              <div className="absolute inset-0 bg-gradient-radial from-neon-cyan/10 to-transparent opacity-30 blur-xl -z-10"></div>
+              
+              {/* Ambient glow effect */}
+              <div className="absolute inset-0 bg-gradient-radial from-neon-purple/10 via-neon-cyan/5 to-transparent opacity-50 blur-2xl -z-10 animate-[pulse_4s_ease-in-out_infinite]"></div>
             </div>
           </div>
           
