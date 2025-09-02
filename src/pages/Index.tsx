@@ -682,7 +682,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="py-20 bg-muted/10">
+    <section id="testimonials" className="py-20 bg-muted/10">
       <Container>
         <div className="max-w-3xl mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
