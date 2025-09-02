@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Autoplay from "embla-carousel-autoplay";
 import logoImage from '@/assets/grow-with-ai-logo.png';
 
@@ -1029,6 +1030,154 @@ function Footer() {
   );
 }
 
+const featureCategories = [
+  {
+    id: "automation",
+    label: "AI Automation",
+    icon: Cog,
+    features: [
+      {
+        name: "Autonomous AI Agents",
+        description: "Self-managing AI systems that handle complex tasks from start to finish without supervision.",
+        benefits: ["24/7 Operation", "Zero Micromanaging", "Intelligent Decision Making"]
+      },
+      {
+        name: "Workflow Automations", 
+        description: "Trigger-based systems that automate repetitive processes and eliminate weekend work.",
+        benefits: ["Trigger-Based Execution", "Process Optimization", "Time Savings"]
+      },
+      {
+        name: "Smart Integrations",
+        description: "Seamless connection between your existing tools and AI-powered enhancements.",
+        benefits: ["System Integration", "Data Flow Automation", "Legacy Compatibility"]
+      }
+    ]
+  },
+  {
+    id: "communication", 
+    label: "AI Communication",
+    icon: MessageCircle,
+    features: [
+      {
+        name: "AI Voice Agents",
+        description: "Real-time voice communication systems for inbound and outbound customer interactions.",
+        benefits: ["Real-time Processing", "Lead Qualification", "Customer Support"]
+      },
+      {
+        name: "Social Media AI",
+        description: "Complete social media management including content creation, scheduling, and engagement.",
+        benefits: ["Content Generation", "Automated Engagement", "Brand Management"]
+      },
+      {
+        name: "Multi-Channel Support",
+        description: "Unified AI communication across email, chat, phone, and social platforms.",
+        benefits: ["Omnichannel Experience", "Consistent Messaging", "24/7 Availability"]
+      }
+    ]
+  },
+  {
+    id: "analytics",
+    label: "AI Analytics", 
+    icon: BarChart3,
+    features: [
+      {
+        name: "Predictive Intelligence",
+        description: "Advanced forecasting and trend analysis to drive strategic business decisions.",
+        benefits: ["Future Insights", "Risk Assessment", "Strategic Planning"]
+      },
+      {
+        name: "Performance Monitoring",
+        description: "Real-time tracking and optimization of all AI systems and business processes.",
+        benefits: ["Live Monitoring", "Performance Optimization", "ROI Tracking"]
+      },
+      {
+        name: "Custom Dashboards",
+        description: "Personalized analytics interfaces tailored to your specific business metrics.",
+        benefits: ["Custom Metrics", "Visual Reporting", "Executive Insights"]
+      }
+    ]
+  }
+];
+
+function Features() {
+  const [activeTab, setActiveTab] = useState("automation");
+  
+  return (
+    <section id="features" className="py-20 bg-muted/10">
+      <Container>
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">AI-Powered Feature Suite</h2>
+          <p className="text-lg text-foreground/70">
+            Comprehensive AI solutions designed to transform every aspect of your business operations with intelligent automation and strategic insights.
+          </p>
+        </div>
+        
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="grid w-full grid-cols-3 mb-12 h-14 bg-card border border-border/30 rounded-2xl p-2">
+            {featureCategories.map((category) => (
+              <TabsTrigger
+                key={category.id}
+                value={category.id}
+                className="flex items-center gap-3 px-6 py-3 text-base font-medium data-[state=active]:bg-gradient-neon-primary data-[state=active]:text-white data-[state=active]:shadow-neon-md transition-all duration-300 rounded-xl"
+              >
+                <category.icon className="h-5 w-5" />
+                {category.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          
+          {featureCategories.map((category) => (
+            <TabsContent key={category.id} value={category.id} className="mt-0">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {category.features.map((feature, index) => (
+                  <ProfessionalCard key={feature.name}>
+                    <div className="h-full rounded-2xl border border-neon-cyan/30 bg-card/50 backdrop-blur-sm p-8 hover:shadow-neon-lg hover:border-neon-cyan/50 transition-all duration-500 hover:scale-[1.02] hover:bg-card/80 relative flex flex-col group">
+                      {/* Neon glow effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-neon-cyan/5 via-transparent to-neon-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                      
+                      <div className="relative z-10 flex flex-col h-full">
+                        <div className="inline-flex p-4 rounded-xl bg-neon-cyan/20 mb-6 group-hover:bg-neon-cyan/30 transition-colors duration-300 shadow-neon-sm w-fit">
+                          <category.icon className="h-8 w-8 text-neon-cyan group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                        
+                        <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-transparent group-hover:bg-gradient-neon-primary group-hover:bg-clip-text transition-all duration-300">
+                          {feature.name}
+                        </h3>
+                        
+                        <p className="text-foreground/70 mb-8 leading-relaxed text-lg flex-1">
+                          {feature.description}
+                        </p>
+                        
+                        <ul className="space-y-3">
+                          {feature.benefits.map((benefit, idx) => (
+                            <li key={benefit} className="flex items-center gap-3 text-foreground/80">
+                              <div className="w-5 h-5 rounded-full bg-neon-cyan/20 flex items-center justify-center flex-shrink-0">
+                                <CheckCircle className="h-3 w-3 text-neon-cyan" />
+                              </div>
+                              <span className="font-medium">{benefit}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </ProfessionalCard>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+        
+        <div className="text-center mt-16">
+          <Button className="bg-gradient-neon-primary hover:shadow-neon-lg">
+            Explore All Features
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 export default function Index() {
   return (
     <div className="min-h-screen font-sans bg-background">
@@ -1038,6 +1187,7 @@ export default function Index() {
       <Hero />
       <LogoCloud />
       <Services />
+      <Features />
       <Solutions />
       <Process />
       <Testimonials />
