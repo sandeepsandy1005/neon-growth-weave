@@ -835,7 +835,7 @@ function FAQ() {
 
 function Contact() {
   return (
-    <section id="contact" className="py-20 bg-muted/10">
+    <section id="contact" className="py-20 bg-muted/10 scroll-mt-20 target:ring-2 target:ring-neon-cyan target:ring-opacity-50 target:bg-muted/20 transition-all duration-500">
       <Container>
         <div className="grid gap-16 lg:grid-cols-2">
           <div>

@@ -102,6 +102,10 @@ All colors MUST be HSL for consistency with neon aesthetic.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
