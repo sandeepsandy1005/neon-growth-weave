@@ -979,9 +979,25 @@ function Footer() {
               <BrandLogo />
               <span className="text-foreground text-xl font-bold bg-gradient-neon-primary bg-clip-text text-transparent">Grow with AI</span>
             </div>
-            <p className="text-foreground/70 text-sm leading-relaxed">
+            <p className="text-foreground/70 text-sm leading-relaxed mb-4">
               AI-powered growth solutions that unlock your potential and transform ideas into extraordinary results.
             </p>
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://www.linkedin.com/company/108431845" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-lg bg-card border border-border hover:border-neon-cyan/50 flex items-center justify-center hover:bg-neon-cyan/10 transition-all duration-300"
+              >
+                <Globe className="h-4 w-4 text-neon-cyan" />
+              </a>
+              <a 
+                href="mailto:sandeep@growwithai.com"
+                className="w-8 h-8 rounded-lg bg-card border border-border hover:border-neon-purple/50 flex items-center justify-center hover:bg-neon-purple/10 transition-all duration-300"
+              >
+                <MessageCircle className="h-4 w-4 text-neon-purple" />
+              </a>
+            </div>
           </div>
           
           <div>
