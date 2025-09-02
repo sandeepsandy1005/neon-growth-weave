@@ -1007,10 +1007,19 @@ function Footer() {
           
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm text-foreground/70">
-              <li>sandeep@growwithai.com</li>
-              <li>@growwithai</li>
-              <li><a href="https://www.linkedin.com/company/108431845" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a></li>
+            <ul className="space-y-3 text-sm text-foreground/70">
+              <li className="flex items-center gap-2">
+                <MessageCircle className="h-4 w-4 text-neon-cyan" />
+                <span>sandeep@growwithai.com</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-neon-purple" />
+                <a href="#contact" className="hover:text-foreground transition-colors">Book a Call</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Globe className="h-4 w-4 text-neon-pink" />
+                <a href="https://www.linkedin.com/company/108431845" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
+              </li>
             </ul>
           </div>
         </div>
