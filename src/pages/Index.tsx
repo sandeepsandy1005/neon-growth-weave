@@ -720,7 +720,7 @@ function FounderIntro() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden border border-border/30 bg-card shadow-neon-md hover:shadow-neon-lg transition-all duration-500 hover:scale-[1.02]">
                 <img 
-                  src="/lovable-uploads/9714d208-b235-4207-811e-b9e723e40880.png" 
+                  src="/lovable-uploads/d6ba6530-2f95-4ed4-aab6-7c4685cb2f69.png" 
                   alt="Sandeep, Founder of Grow with AI" 
                   className="w-80 object-contain"
                 />
