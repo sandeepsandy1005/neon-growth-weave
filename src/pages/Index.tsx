@@ -10,8 +10,7 @@ const nav = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
   { label: "Features", href: "#features" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" }
+  { label: "About", href: "#about" }
 ];
 
 // Neon palette using design system colors
