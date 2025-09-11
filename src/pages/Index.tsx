@@ -1024,10 +1024,12 @@ function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Solutions</h4>
             <ul className="space-y-2 text-sm text-foreground/70">
+              <li><a href="#services" className="hover:text-foreground transition-colors">Chatbot Development</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">Custom AI Applications</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">AI Consultation</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">AI Voice Agents</a></li>
               <li><a href="#services" className="hover:text-foreground transition-colors">Process Automation</a></li>
-              <li><a href="#services" className="hover:text-foreground transition-colors">Predictive Analytics</a></li>
-              <li><a href="#services" className="hover:text-foreground transition-colors">Enterprise AI</a></li>
-              <li><a href="#solutions" className="hover:text-foreground transition-colors">Industry Solutions</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">Data Analytics & AI</a></li>
             </ul>
           </div>
           
