@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock, Youtube, Linkedin, Mail, Mic, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock, Youtube, Linkedin, Mail, Mic, Wrench, UserCheck, Utensils } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -535,6 +535,8 @@ const solutions = [
   { icon: Globe, name: "Retail & E-commerce", desc: "Inventory management, customer insights, and personalization engines." },
   { icon: Zap, name: "Technology", desc: "DevOps automation, code analysis, and infrastructure management." },
   { icon: BarChart3, name: "Professional Services", desc: "Document processing, client management, and billing automation." },
+  { icon: UserCheck, name: "HR Services", desc: "Employee onboarding, performance tracking, and recruitment automation." },
+  { icon: Utensils, name: "Restaurants", desc: "Order management, inventory tracking, and customer service automation." },
 ];
 
 function Solutions() {
