@@ -9,7 +9,7 @@ import logoImage from '@/assets/grow-with-ai-logo.png';
 const nav = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
-  { label: "Features", href: "#features" },
+  { label: "Features", href: "#solutions" },
   { label: "About", href: "#about" }
 ];
 
