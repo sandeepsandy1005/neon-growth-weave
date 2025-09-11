@@ -1015,7 +1015,7 @@ function Footer() {
                 <Linkedin className="h-4 w-4 text-neon-purple" />
               </a>
               <a 
-                href="mailto:sandeep@growwithai.com"
+                href="mailto:info@growwithai.tech"
                 className="w-8 h-8 rounded-lg bg-card border border-border hover:border-neon-pink/50 flex items-center justify-center hover:bg-neon-pink/10 transition-all duration-300"
               >
                 <Mail className="h-4 w-4 text-neon-pink" />
@@ -1051,7 +1051,7 @@ function Footer() {
             <ul className="space-y-3 text-sm text-foreground/70">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-neon-cyan" />
-                <span>sandeep@growwithai.com</span>
+                <span>info@growwithai.tech</span>
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-neon-purple" />
