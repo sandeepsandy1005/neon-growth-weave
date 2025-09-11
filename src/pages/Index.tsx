@@ -762,7 +762,7 @@ function FounderIntro() {
               </p>
               
               <p>
-                At <strong className="text-neon-cyan">Grow with AI</strong>, we <strong className="text-neon-purple">Give Time Back to People</strong> and <strong className="text-neon-pink">Let AI Handle the Rest</strong>. <strong className="text-neon-cyan">Grow with AI</strong> empowers your team with AI solutions that free them from repetitive tasks, so they can focus on what truly matters.
+                At <strong className="text-neon-cyan">Grow with AI</strong>, we <strong className="text-neon-purple">Give Time Back to People</strong> and <strong className="text-neon-pink">Let AI Handle the Rest</strong>. We empower your team with AI solutions that free them from repetitive tasks, so they can focus on what truly matters.
               </p>
               
               <p>
