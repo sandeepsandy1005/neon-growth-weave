@@ -529,12 +529,12 @@ function Services() {
 }
 
 const solutions = [
-  { icon: MessageCircle, name: "Chatbot Development", desc: "Intelligent conversational AI that engages customers 24/7 and drives conversions." },
-  { icon: Wrench, name: "Custom AI Applications", desc: "Tailored AI solutions built to fit unique business needs with scalability in mind." },
-  { icon: Brain, name: "AI Consultation", desc: "Strategic guidance to unlock AI's full potential and ROI." },
-  { icon: Mic, name: "AI Voice Agents", desc: "Inbound or outbound AI voice agents that communicate with leads and customers in real-time." },
-  { icon: Cog, name: "Process Automation", desc: "Intelligent workflow automation that eliminates repetitive tasks and streamlines operations." },
-  { icon: BarChart3, name: "Data Analytics & AI", desc: "Transform raw data into actionable insights with predictive analytics and machine learning." },
+  { icon: Users, name: "Financial Services", desc: "Automated compliance, risk assessment, and customer onboarding." },
+  { icon: TrendingUp, name: "Manufacturing", desc: "Predictive maintenance, quality control, and supply chain optimization." },
+  { icon: Shield, name: "Healthcare", desc: "Patient data management, diagnostic assistance, and workflow automation." },
+  { icon: Globe, name: "Retail & E-commerce", desc: "Inventory management, customer insights, and personalization engines." },
+  { icon: Zap, name: "Technology", desc: "DevOps automation, code analysis, and infrastructure management." },
+  { icon: BarChart3, name: "Professional Services", desc: "Document processing, client management, and billing automation." },
 ];
 
 function Solutions() {
@@ -542,9 +542,9 @@ function Solutions() {
     <section id="solutions" className="py-20 bg-muted/10">
       <Container>
         <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Comprehensive AI Automation Services</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Industry-Specific Solutions</h2>
           <p className="text-lg text-foreground/70">
-            Complete AI automation solutions designed to transform your business operations and drive measurable results.
+            Tailored AI automation solutions designed for the unique challenges and opportunities in your industry.
           </p>
         </div>
         
