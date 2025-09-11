@@ -531,12 +531,12 @@ function Services() {
 const solutions = [
   { icon: Users, name: "Financial Services", desc: "Automated compliance, risk assessment, and customer onboarding." },
   { icon: TrendingUp, name: "Manufacturing", desc: "Predictive maintenance, quality control, and supply chain optimization." },
-  { icon: Shield, name: "Healthcare", desc: "Patient data management, diagnostic assistance, and workflow automation." },
+  { icon: Shield, name: "Healthcare", desc: "Patient data management, diagnostic assistance, appointment booking, and workflow automation." },
   { icon: Globe, name: "Retail & E-commerce", desc: "Inventory management, customer insights, and personalization engines." },
   { icon: Zap, name: "Technology", desc: "DevOps automation, code analysis, and infrastructure management." },
   { icon: BarChart3, name: "Professional Services", desc: "Document processing, client management, and billing automation." },
   { icon: UserCheck, name: "HR Services", desc: "Employee onboarding, performance tracking, and recruitment automation." },
-  { icon: Utensils, name: "Restaurants", desc: "Order management, inventory tracking, and customer service automation." },
+  { icon: Utensils, name: "Restaurants", desc: "Order management, inventory tracking, appointment booking, and customer service automation." },
 ];
 
 function Solutions() {
