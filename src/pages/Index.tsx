@@ -424,10 +424,24 @@ const services = [
     color: "neon-purple"
   },
   {
-    icon: Clock,
-    title: "Social Media AI Systems",
-    desc: "AI handles your content, comments, and conversations. It writes, schedules, replies, and even reaches out. Whether it's building brand presence or supporting leads—your AI system works the platform while you run the business.",
-    features: ["Content Creation", "Automated Engagement", "Brand Building"],
+    icon: MessageCircle,
+    title: "Chatbot Development",
+    desc: "Intelligent conversational AI that engages customers 24/7 and drives conversions.",
+    features: ["Always-On Multilingual Support", "Seamless CRM Integration", "Conversion-Focused Interactions"],
+    color: "neon-purple"
+  },
+  {
+    icon: Cog,
+    title: "Custom AI Applications",
+    desc: "Tailored AI solutions built to fit unique business needs with scalability in mind.",
+    features: ["Custom Development", "API + Cloud Integration", "Enterprise-Grade Architecture"],
+    color: "neon-purple"
+  },
+  {
+    icon: Brain,
+    title: "AI Consultation", 
+    desc: "Strategic guidance to unlock AI's full potential and ROI.",
+    features: ["AI Strategy & Roadmap", "ROI & Impact Analysis", "Scalable Implementation Framework"],
     color: "neon-purple"
   },
 ];
