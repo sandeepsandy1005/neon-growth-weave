@@ -544,7 +544,7 @@ function Solutions() {
     <section id="solutions" className="py-20 bg-muted/10">
       <Container>
         <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Industry-Specific Solutions</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-neon-primary bg-clip-text text-transparent">Industry-Specific Solutions</h2>
           <p className="text-lg text-foreground/70">
             Tailored AI automation solutions designed for the unique challenges and opportunities in your industry.
           </p>
@@ -651,7 +651,7 @@ function Process() {
     <section id="process" className="py-20 bg-muted/10">
       <Container>
         <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Proven Methodology</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-neon-primary bg-clip-text text-transparent">Our Proven Methodology</h2>
           <p className="text-lg text-foreground/70">
             A systematic approach that ensures successful AI automation implementation with minimal risk and maximum impact.
           </p>
@@ -700,7 +700,7 @@ function Testimonials() {
     <section id="testimonials" className="py-20 bg-muted/10">
       <Container>
         <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-neon-primary bg-clip-text text-transparent">What Our Clients Say</h2>
           <p className="text-lg text-foreground/70">
             Trusted by executives and technical leaders at the world's most innovative companies.
           </p>
@@ -815,7 +815,7 @@ function FAQ() {
     <section className="py-20 bg-background">
       <Container>
         <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-neon-primary bg-clip-text text-transparent">Frequently Asked Questions</h2>
           <p className="text-lg text-foreground/70">
             Common questions about our AI automation solutions and implementation process.
           </p>
