@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock, Youtube, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, TrendingUp, Shield, Zap, BarChart3, Brain, Cog, Globe, Rocket, Sparkles, MessageCircle, Clock, Youtube, Linkedin, Mail, Mic, Wrench } from "lucide-react";
 import { MouseFollower } from '@/components/MouseFollower';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -417,7 +417,7 @@ const services = [
     color: "neon-purple"
   },
   {
-    icon: MessageCircle,
+    icon: Mic,
     title: "AI Voice Agents",
     desc: "Inbound or outbound—AI voice agents talk to your leads and customers in real-time. They answer, qualify, remind, and follow up—so you don't have to. 2025's standard for modern business communication.",
     features: ["Real-time Communication", "Lead Qualification", "Modern Standard"],
@@ -431,7 +431,7 @@ const services = [
     color: "neon-purple"
   },
   {
-    icon: Cog,
+    icon: Wrench,
     title: "Custom AI Applications",
     desc: "Tailored AI solutions built to fit unique business needs with scalability in mind.",
     features: ["Custom Development", "API + Cloud Integration", "Enterprise-Grade Architecture"],
