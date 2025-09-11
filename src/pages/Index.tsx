@@ -854,7 +854,7 @@ function Contact() {
       <Container>
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 bg-gradient-neon-primary bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.4)] animate-pulse">
               Ready to Transform Your Business?
             </h2>
             <p className="text-lg text-foreground/70 mb-8">
