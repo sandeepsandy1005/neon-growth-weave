@@ -227,7 +227,7 @@ function Hero() {
                 Start Growing Today
                 <Rocket className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="secondary" href="#features" className="w-full sm:w-auto border-neon-purple text-neon-purple hover:bg-neon-purple/20">
+              <Button variant="secondary" href="#solutions" className="w-full sm:w-auto border-neon-purple text-neon-purple hover:bg-neon-purple/20">
                 Explore Features
               </Button>
             </div>
