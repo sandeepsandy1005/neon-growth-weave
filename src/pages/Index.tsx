@@ -754,11 +754,11 @@ function FounderIntro() {
             
             <div className="text-lg text-foreground/80 leading-relaxed space-y-4">
               <p>
-                I'm the founder of <strong className="text-neon-cyan">Grow with AI</strong>—where our mission is simple: Grow your business with AI.
+                I'm the founder of <strong className="text-neon-cyan">Grow with AI</strong>, where our mission is simple: Grow your business with AI.
               </p>
               
               <p>
-                With AI, tasks that once took <strong className="text-neon-purple">95 minutes → 5 minutes</strong>. That's the power of automation and intelligence combined—working <strong className="text-neon-pink">24/7/365</strong> so your business runs faster, smarter, and at scale.
+                With AI, tasks that once took <strong className="text-neon-purple">95 minutes → 5 minutes</strong>. That's the power of automation and intelligence combined, working <strong className="text-neon-pink">24/7/365</strong> so your business runs faster, smarter, and at scale.
               </p>
               
               <p>
